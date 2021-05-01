@@ -18,7 +18,8 @@ date = 2021-03-12
 ## 所属学会
 1. 日本バーチャルリアリティ学会
 ## 原著論文
-1. [[Open Access][Early Access] <u>Shun Suzuki</u>, Seki Inoue, Masahiro Fujiwara, Yasutoshi Makino, and Hiroyuki Shinoda, “AUTD3: Scalable Airborne Ultrasound Tactile Display,” in IEEE Transactions on Haptics, doi: 10.1109/TOH.2021.3069976.](https://ieeexplore.ieee.org/document/9392322)
+1. [[Open Access][Early Access] <u>Shun Suzuki</u>, Masahiro Fujiwara, Yasutoshi Makino, and Hiroyuki Shinoda, “Radiation Pressure Field Reconstruction for Ultrasound Midair Haptics by Greedy Algorithm with Brute-Force Search,” in IEEE Transactions on Haptics, doi: 10.1109/TOH.2021.3076489](https://ieeexplore.ieee.org/document/9419757)
+1. [[Open Access][Early Access] <u>Shun Suzuki</u>, Seki Inoue, Masahiro Fujiwara, Yasutoshi Makino, and Hiroyuki Shinoda, “AUTD3: Scalable Airborne Ultrasound Tactile Display,” in IEEE Transactions on Haptics, doi: 10.1109/TOH.2021.3069976](https://ieeexplore.ieee.org/document/9392322)
 1. [[Open Access] <u>Shun Suzuki</u>, Masahiro Fujiwara, Yasutoshi Makino, and Hiroyuki Shinoda, "Reducing Amplitude Fluctuation by Gradual Phase Shift in Midair Ultrasound Haptics," IEEE transactions on haptics, Vol. 13, No. 1, pp. 87-93, Jan.-March (2020).](https://ieeexplore.ieee.org/document/8960301)
 
 ## 国際会議（査読有）
