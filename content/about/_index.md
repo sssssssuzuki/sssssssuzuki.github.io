@@ -26,7 +26,7 @@ The University of Tokyo
 
 ## Curriculum Vitae
 
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|                                                     |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|                                                     |
 | :-----------------------| :---------------------------------------------------|
 | Apr. 2019 -             | Doctoral program, Department of complexity sceince and engineering, Graduate School of Frontier Sciences, The University of Tokyo  |
 | Apr. 2017 - Mar. 2019   | Master course, Department of complexity sceince and engineering, Graduate School of Frontier Sciences, The University of Tokyo  |
@@ -76,7 +76,7 @@ The University of Tokyo
 
 ## Awards
 
-|          | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |                  |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |                  |
 | :--------| :--------------------| --------------: |
 | 2020.12  | SICE SI2020 優秀講演賞 | 小丹枝涼哉, 森崎汰雄, 水谷沙耶, <u>鈴木颯</u>, 神垣貴晶, 藤原正浩, 牧野泰才, 篠田裕之|
 | 2019.12  | SICE SI2019 優秀講演賞 | 神垣貴晶, <u>鈴木颯</u>, 藤原正浩, 牧野泰才, 篠田裕之|
