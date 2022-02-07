@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Deploy to gh-pages branch
-        uses: shalzz/zola-deploy-action@v0.13.0
+        uses: shalzz/zola-deploy-action@master
         env:
           PAGES_BRANCH: gh-pages
-          TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
