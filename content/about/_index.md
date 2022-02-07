@@ -11,13 +11,17 @@ e-mail: suzuki[at]hapis.k.u-tokyo.ac.jp
 ## Affiliation
 
 Shinoda & Makino Group,
+
 Department of Complexity Science and Engineering,
+
 Graduate School of Frontier Sciences,
+
 The University of Tokyo
 
 ## Address
 
 #3E3, Transdisciplinary Sciences
+
 5-1-5 Kashiwanoha, Kashiwa, Chiba 277-8561, JAPAN
 
 ## Curriculum Vitae
