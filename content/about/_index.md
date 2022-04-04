@@ -28,7 +28,7 @@ The University of Tokyo
 
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|                                                     |
 | :-----------------------| :---------------------------------------------------|
-| Apr. 2022 -             | Project Associate Professor, Department of complexity sceince and engineering, Graduate School of Frontier Sciences, The University of Tokyo  |
+| Apr. 2022 -             | Project Assistant Professor, Department of complexity sceince and engineering, Graduate School of Frontier Sciences, The University of Tokyo  |
 | Apr. 2019 - Mar. 2022   | Doctoral program, Department of complexity sceince and engineering, Graduate School of Frontier Sciences, The University of Tokyo  |
 | Apr. 2017 - Mar. 2019   | Master course, Department of complexity sceince and engineering, Graduate School of Frontier Sciences, The University of Tokyo  |
 | Apr. 2013 - Mar. 2017   | Department of Physics, School of Advanced Science and Engineering, Waseda University                         |
