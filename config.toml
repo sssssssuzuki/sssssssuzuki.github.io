@@ -1,5 +1,5 @@
 base_url = "https://sssssssuzuki.github.io/homepage/"
-compile_sass = false
+compile_sass = true
 build_search_index = false
 title = "Suzuki Shun's homepage"
 theme = "blow"
