@@ -16,7 +16,6 @@ extra_syntaxes = []
 highlight_theme = "base16-ocean-dark"
 render_emoji = true
 
-
 [extra]
 enable_search = false
 enable_sidebar = true
@@ -44,7 +43,7 @@ items = [
 
 [extra.index]
 title = "Suzuki Shun"
-image = "https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/logo/logo.svg"
+image = "https://sssssssuzuki.github.io/logo.svg"
 
 [extra.default_author]
 name = "Suzuki Shun"
