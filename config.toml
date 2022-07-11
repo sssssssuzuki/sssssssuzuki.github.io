@@ -1,20 +1,23 @@
 base_url = "https://sssssssuzuki.github.io/homepage/"
-compile_sass = true
-build_search_index = true
+compile_sass = false
+build_search_index = false
 title = "Suzuki Shun's homepage"
 theme = "blow"
+default_language = "ja"
 
 [markdown]
 highlight_code = true
 
+highlight_theme = "base16-ocean-dark"
+
 [extra]
-enable_search = true
+enable_search = false
 enable_sidebar = true
 enable_multilingue = false
 
 [extra.navbar]
 items = [
-    { lang = "jp", links = [
+    { lang = "ja", links = [
         { url = "/", name = "Home" },
         { url = "/categories", name = "Categories" },
         { url = "/tags", name = "Tags" },
@@ -24,7 +27,7 @@ title = "Suzuki Shun's homepage"
 
 [extra.sidebar]
 items = [
-    { lang = "jp", links = [
+    { lang = "ja", links = [
         { url = "/about", name = "About" },
 	{ url = "/markdown", name = "Markdown" },
         { url = "/blog", name = "Blog" },
@@ -33,7 +36,7 @@ items = [
 
 [extra.index]
 title = "Suzuki Shun"
-image = "logo.svg"
+image = "https://raw.githubusercontent.com/sssssssuzuki/homepage/master/content/logo/logo.svg"
 
 [extra.default_author]
 name = "Suzuki Shun"
