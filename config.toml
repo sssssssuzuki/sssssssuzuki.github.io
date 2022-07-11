@@ -1,12 +1,47 @@
 base_url = "https://sssssssuzuki.github.io/homepage/"
 compile_sass = true
-build_search_index = false
+build_search_index = true
 title = "Suzuki Shun's homepage"
-theme = "oceanic-zen"
+theme = "blow"
 
 [markdown]
 highlight_code = true
 
 [extra]
-author = "Suzuki Shun"
-github = "sssssssuzuki"
+enable_search = true
+enable_sidebar = true
+enable_multilingue = false
+
+[extra.navbar]
+items = [
+    { lang = "jp", links = [
+        { url = "/", name = "Home" },
+        { url = "/categories", name = "Categories" },
+        { url = "/tags", name = "Tags" },
+    ] }
+]
+title = "Suzuki Shun's homepage"
+
+[extra.sidebar]
+items = [
+    { lang = "jp", links = [
+        { url = "/about", name = "About" },
+	{ url = "/markdown", name = "Markdown" },
+        { url = "/blog", name = "Blog" },
+    ] }
+]
+
+[extra.index]
+title = "Suzuki Shun"
+image = "logo.svg"
+
+[extra.default_author]
+name = "Suzuki Shun"
+
+[extra.social]
+github = "https://github.com/sssssssuzuki"
+gitlab = ""
+twitter = ""
+linkedin = ""
+email = "suzuki@hapis.k.u-tokyo.ac.jp"
+

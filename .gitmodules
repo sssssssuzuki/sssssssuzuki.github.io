@@ -1,3 +1,6 @@
 [submodule "themes/oceanic-zen"]
 	path = themes/oceanic-zen
 	url = https://github.com/barlog-m/oceanic-zen.git
+[submodule "themes/blow"]
+	path = themes/blow
+	url = https://github.com/tchartron/blow.git
