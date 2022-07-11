@@ -1,14 +1,21 @@
 base_url = "https://sssssssuzuki.github.io"
-compile_sass = true
+compile_sass = false
 build_search_index = false
 title = "Suzuki Shun's homepage"
 theme = "blow"
 default_language = "ja"
 
+taxonomies = [
+    {name = "tags", paginate_by = 5, feed = true},
+    {name = "categories", paginate_by = 5, feed = true},
+]
+
 [markdown]
 highlight_code = true
-
+extra_syntaxes = []
 highlight_theme = "base16-ocean-dark"
+render_emoji = true
+
 
 [extra]
 enable_search = false
