@@ -1,4 +1,4 @@
-base_url = "https://sssssssuzuki.github.io/homepage"
+base_url = "https://sssssssuzuki.github.io"
 compile_sass = true
 build_search_index = false
 title = "Suzuki Shun's homepage"
@@ -29,14 +29,14 @@ title = "Suzuki Shun's homepage"
 items = [
     { lang = "ja", links = [
         { url = "/about", name = "About" },
-	{ url = "/markdown", name = "Markdown" },
+        { url = "/markdown", name = "Markdown" },
         { url = "/blog", name = "Blog" },
     ] }
 ]
 
 [extra.index]
 title = "Suzuki Shun"
-image = "https://raw.githubusercontent.com/sssssssuzuki/homepage/master/content/logo/logo.svg"
+image = "https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/logo/logo.svg"
 
 [extra.default_author]
 name = "Suzuki Shun"
