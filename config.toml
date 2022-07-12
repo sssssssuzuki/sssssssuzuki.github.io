@@ -18,29 +18,21 @@ render_emoji = true
 
 [extra]
 enable_search = false
-enable_sidebar = true
+enable_sidebar = false
 enable_multilingue = false
 enable_adsense = false
-enable_toc = true
 
 [extra.navbar]
 items = [
     { lang = "ja", links = [
         { url = "/", name = "Home" },
+	{ url = "/about/about-me", name = "About me"},
+	{ url = "/blog", name = "Blog"},
         { url = "/categories", name = "Categories" },
         { url = "/tags", name = "Tags" },
     ] }
 ]
 title = "Suzuki Shun's homepage"
-
-[extra.sidebar]
-items = [
-    { lang = "ja", links = [
-        { url = "/about", name = "About" },
-        { url = "/markdown", name = "Markdown" },
-        { url = "/blog", name = "Blog" },
-    ] }
-]
 
 [extra.index]
 title = "Suzuki Shun"
