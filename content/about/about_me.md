@@ -1,46 +1,49 @@
 +++
 title = "About me"
 date = 2022-02-07
+[extra]
+toc = true
 +++
 
-鈴木 颯 (Suzuki, Shun)
-
+鈴木 颯 (Suzuki, Shun)<br>
 e-mail: suzuki[at]hapis.k.u-tokyo.ac.jp
 
 ## Affiliation
 
-Shinoda & Makino Group,
-
-Department of Complexity Science and Engineering,
-
-Graduate School of Frontier Sciences,
-
+Shinoda & Makino Group,<br>
+Department of Complexity Science and Engineering,<br>
+Graduate School of Frontier Sciences,<br>
 The University of Tokyo
 
 ## Address
 
-#3E3, Transdisciplinary Sciences
-
+#3E3, Transdisciplinary Sciences<br>
 5-1-5 Kashiwanoha, Kashiwa, Chiba 277-8561, JAPAN
 
 ## Curriculum Vitae
 
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|                                                     |
+<div class=table-wo-header>
+
+|                         |                                                     |
 | :-----------------------| :---------------------------------------------------|
 | Apr. 2022 -             | Project Assistant Professor, Department of complexity sceince and engineering, Graduate School of Frontier Sciences, The University of Tokyo  |
 | Apr. 2019 - Mar. 2022   | Doctoral program, Department of complexity sceince and engineering, Graduate School of Frontier Sciences, The University of Tokyo  |
 | Apr. 2017 - Mar. 2019   | Master course, Department of complexity sceince and engineering, Graduate School of Frontier Sciences, The University of Tokyo  |
 | Apr. 2013 - Mar. 2017   | Department of Physics, School of Advanced Science and Engineering, Waseda University                         |
 
+</div>
+
 ## Journal Articles
+
 1. [[Open Access]<u>Shun Suzuki</u>, Masahiro Fujiwara, Yasutoshi Makino, and Hiroyuki Shinoda, "Radiation Pressure Field Reconstruction for Ultrasound Midair Haptics by Greedy Algorithm with Brute-Force Search," *IEEE Transactions on Haptics*, vol. 14, no. 4, pp. 914–921, 2021. doi: 10.1109/TOH.2021.3076489](https://ieeexplore.ieee.org/document/9419757)
 1. [[Open Access]<u>Shun Suzuki</u>, Seki Inoue, Masahiro Fujiwara, Yasutoshi Makino, and Hiroyuki Shinoda, "AUTD3: Scalable Airborne Ultrasound Tactile Display," *IEEE Transactions on Haptics*, vol. 14, no. 4, pp. 740–749, 2021. doi: 10.1109/TOH.2021.3069976](https://ieeexplore.ieee.org/document/9392322)
 1. [[Open Access]<u>Shun Suzuki</u>, Masahiro Fujiwara, Yasutoshi Makino, and Hiroyuki Shinoda, "Reducing Amplitude Fluctuation by Gradual Phase Shift in Midair Ultrasound Haptics," *IEEE transactions on haptics*, vol. 13, no. 1, pp. 87-93, 2020. doi: 10.1109/TOH.2020.2965946.](https://ieeexplore.ieee.org/document/8960301)
 
 ## International Conference Proceedings
+
 1. [[Open Access]Takaaki Kamigaki, <u>Shun Suzuki</u>, and Hiroyuki Shinoda, "Noncontact Thermal and Vibrotactile Display Using Focused Airborne Ultrasound," *International Conference on Human Haptic Sensing and Touch Enabled Computer Applications (EuroHaptics)*, pp. 271-278, Sep. 6-9, 2020, Leiden, Netherlands. (Online). doi: https://doi.org/10.1007/978-3-030-58147-3_30](https://link.springer.com/chapter/10.1007%2F978-3-030-58147-3_30)
 1. [[Open Access]Seunggoo Rim, <u>Shun Suzuki</u>, Yutaro Toide, Masahiro Fujiwara, Yasutoshi Makino, and Hiroyuki Shinoda, "Sound-Image Icon with Aerial Haptic Feedback," *International Conference on Human Haptic Sensing and Touch Enabled Computer Applications (EuroHaptics)*, pp. 497-505, Sep. 6-9, 2020, Leiden, Netherlands. doi: https://doi.org/10.1007/978-3-030-58147-3_54](https://link.springer.com/chapter/10.1007%2F978-3-030-58147-3_30)
-1. [<u>Shun Suzuki</u>, Masahiro Fujiwara, Yasutoshi Makino, and Hiroyuki Shinoda, "Midair Hand Guidance by an Ultrasound Virtual Handrail," *2019 IEEE World Haptics Conference*, pp.271-276, July 9-12, 2019, Tokyo, Japan. doi: 10.1109/WHC.2019.8816123](https://ieeexplore.ieee.org/document/8816123) 
+1. [<u>Shun Suzuki</u>, Masahiro Fujiwara, Yasutoshi Makino, and Hiroyuki Shinoda, "Midair Hand Guidance by an Ultrasound Virtual Handrail," *2019 IEEE World Haptics Conference*, pp.271-276, July 9-12, 2019, Tokyo, Japan. doi: 10.1109/WHC.2019.8816123](https://ieeexplore.ieee.org/document/8816123)
     * [draft](https://drive.google.com/file/d/11P_0jPkIcL0T8Bqxh6nE1ZUiIoVutknc/view)
 1. Kohki Serizawa, Yuichi Masuda, <u>Shun Suzuki</u>, Masahiro Fujiwara, Akihito Noda, Yasutoshi Makino and Hiroyuki Shinoda, "Whole body haptic experience using 2D communication wear", *Asia Haptics 2018*, Nov. 14-16, 2018, Incheon, Korea.
     * [draft](https://drive.google.com/file/d/1QIu8bd6Ilx7nG0k0zK60L2Hq-Dk_psha/view)
@@ -52,6 +55,7 @@ The University of Tokyo
     * [draft](https://hapislab.org/public/papers/18_Eurohaptics2018_suzuki_draft.pdf)
 
 ## Domestic Conference Proceedings
+
 1. 日浦 宏哉, <u>鈴木 颯</u>, 藤原 正浩, 牧野 泰才, 篠田 裕之, "空中超音波円錐提示による手の非接触誘導," ロボティクス・メカトロニクス講演会2021, 2021.
 1. 日浦 宏哉, <u>鈴木 颯</u>, 藤原 正浩, 牧野 泰才, 篠田 裕之, "空中超音波円錐提示による手の非接触3 次元誘導," 第22回計測自動制御学会システムインテグレーション部門講演会論文集, pp. 1943-1948, 2021.
 1. 小丹枝 涼哉, 神垣 貴晶, <u>鈴木 颯</u>, 森崎 汰雄, 藤原 正浩, 牧野 泰才, 篠田 裕之, "熱画像を用いた強力空中超音波の音場分布計測," 第38回センシングフォーラム計測部門大会, pp. 141-145, 2021.
@@ -76,13 +80,22 @@ The University of Tokyo
 
 ## Awards
 
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |                  |
+<div class=table-wo-header>
+
+|          |                       |           |
 | :--------| :--------------------| --------------: |
 | 2020.12  | SICE SI2020 優秀講演賞 | 小丹枝涼哉, 森崎汰雄, 水谷沙耶, <u>鈴木颯</u>, 神垣貴晶, 藤原正浩, 牧野泰才, 篠田裕之|
 | 2019.12  | SICE SI2019 優秀講演賞 | 神垣貴晶, <u>鈴木颯</u>, 藤原正浩, 牧野泰才, 篠田裕之|
 
+</div>
+
 ## Licenses and Certifications
  
+<div class=table-wo-header>
+
 |            |                                         |
 | :----------| :---------------------------------------|
 | May. 2019  | 産業用ロボットの教示等の業務に係る特別教育修了  |
+
+</div>
+

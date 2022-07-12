@@ -21,6 +21,7 @@ enable_search = false
 enable_sidebar = true
 enable_multilingue = false
 enable_adsense = false
+enable_toc = true
 
 [extra.navbar]
 items = [
