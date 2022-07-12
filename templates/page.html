@@ -1,0 +1,24 @@
+{% extends "blow/templates/page.html" %}
+
+{% block head %}
+{% if page.extra.katex %}
+<link rel="stylesheet" href="{{ get_url(path="katex.css") }}">
+<script defer src="{{ get_url(path="katex.js")}}"></script>
+<script defer src="{{ get_url(path="auto-render.js") }}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+	    ],
+	    macros : {
+		"\\mint" : "\\int_{\#1}^{\#2}\\mathrm{d}\#3\\thinspace",
+		"\\R": "\\mathbb{R}"
+	    }
+        });
+    });
+</script>
+{% endif %}
+{% endblock head %}
+
