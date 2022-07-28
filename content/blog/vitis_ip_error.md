@@ -11,9 +11,9 @@ Arty Z7で開発時に, 自作IPを含んだPlatform Projectのビルド時に�
 いまいち原因は分からないが, とりあえず対処療法的に治ったのでメモとして残しておく.
 
 エラーを見るに
-"\<platform project\>/ps7_cortexa9_0/bsp/ps7_cortexa9_0/libsrc/\<IP name\>/src"
+`\<platform project\>/ps7_cortexa9_0/bsp/ps7_cortexa9_0/libsrc/\<IP name\>/src`
 及び,
-"\<platform project\>/zynq_fsbl/zynq_fsbl_bsp/ps7_cortexa9_0/libsrc/\<IP name\>/src"
+`\<platform project\>/zynq_fsbl/zynq_fsbl_bsp/ps7_cortexa9_0/libsrc/\<IP name\>/src`
 の`Makefile`が間違っているっぽい.
 
 デフォルトで用意されているIP (例えば, AXI_GPIOとか) はビルドに成功するので, その`Makefile`で上記の自作IPの`Makefile`を上書きすればエラーは出なくなった.
