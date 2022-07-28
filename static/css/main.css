@@ -1609,3 +1609,19 @@ table {
   font-family: "Ten Mincho", serif;
   font-size: 80%;
 }
+
+/* 引用 */
+blockquote {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding-left: 15px;
+  border-left: 3px solid #ccc;
+}
+
+/* Code */
+:not(pre)>code {
+  display: inline-block;
+  padding: 0 3px;
+  color: #bc7d5f;
+}
