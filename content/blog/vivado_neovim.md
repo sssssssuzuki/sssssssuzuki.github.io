@@ -17,4 +17,3 @@ wt nvim [file name] +[line number]
 ```
 
 上記はnvimへのPATHが通っている前提.
-

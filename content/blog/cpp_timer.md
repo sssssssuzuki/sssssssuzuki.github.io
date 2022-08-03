@@ -508,7 +508,7 @@ LinuxとmacOSはこの程度なら全く問題ない.
 
     ![win60fps](https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/win_with_timebeginperiod/1.0us.svg)
 
-    - PerformanceCounterとSoftware Sleepはかなり頑張ってるが, 途中ちょっとおかしくなる.
+    - PerformanceCounterとSoftware Sleepの組み合わせはかなり頑張ってるが, 途中ちょっとおかしくなる.
 
 - Linux
 
