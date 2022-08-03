@@ -10,6 +10,4 @@ tags = ["Wi-Fi", "Bluetooth"]
 
 しかし, 実験目的の場合, 総務省に届け出を出せば短期間 (最大180日) だけ使用できる.
 
-この手続は以下のサイトよりオンラインできる.
-
-https://exp-sp.denpa.soumu.go.jp/public/
+この手続は[総務省のサイト](https://exp-sp.denpa.soumu.go.jp/public/)よりオンラインできる.
