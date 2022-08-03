@@ -1605,6 +1605,10 @@ table {
   margin: 0;
 }
 
+ul#toc>li {
+  margin-bottom: -1em;
+}
+
 .cjk_fallback {
   font-family: "Ten Mincho", serif;
   font-size: 80%;
