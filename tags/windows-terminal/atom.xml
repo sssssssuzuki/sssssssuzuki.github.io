@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja">
+	<title>Suzuki Shun&#x27;s homepage - Windows Terminal</title>
+	<link href="https://sssssssuzuki.github.io/tags/windows-terminal/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://sssssssuzuki.github.io"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2022-07-28T00:00:00+00:00</updated>
+	<id>https://sssssssuzuki.github.io/tags/windows-terminal/atom.xml</id>
+	<entry xml:lang="ja">
+		<title>Windows Terminalを自分でビルドしてインストールする方法</title>
+		<published>2022-07-28T00:00:00+00:00</published>
+		<updated>2022-07-28T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://sssssssuzuki.github.io/blog/winterm-build/" type="text/html"/>
+		<id>https://sssssssuzuki.github.io/blog/winterm-build/</id>
+		<content type="html">&lt;p&gt;Google日本語入力を使用している場合, Windows Terminalを起動した際に入力モードが半角英数になってしまう問題が発生するようになった.&lt;&#x2F;p&gt;
+&lt;p&gt;半角英数モードだと, 英数字を入力する際に日本語入力と同様にまず変換状態になる.
+そのため, 確定するために余分にEnterキーを押す必要があり煩わしい.&lt;&#x2F;p&gt;
+&lt;p&gt;こうなった原因を調べてみる.
+Windows Terminalのアップデートが原因だろうと思い, &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;microsoft&#x2F;terminal&#x2F;releases&quot;&gt;Release Notes&lt;&#x2F;a&gt;を調べていくと, それっぽいものが見つかった.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The IME input mode now defaults to English when interacting with Windows Terminal (#13028) (thanks @YanceyChiew!)&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;余計なお世話である.&lt;&#x2F;p&gt;
+&lt;p&gt;Pull Requestを見てみると, TSFInputControl inputScopeというものが&lt;code&gt;Text&lt;&#x2F;code&gt;から&lt;code&gt;AlphanumericHalfWidth&lt;&#x2F;code&gt;に変更になったらしい.
+ソースを調べてみると, ハードコードされていて設定で修正はできないようなので, これを戻したものを自分でビルドすることにした.&lt;&#x2F;p&gt;
+&lt;p&gt;ビルドに必要なものと手順は&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;microsoft&#x2F;terminal&quot;&gt;README&lt;&#x2F;a&gt;に書いてあるが, ここにもメモとして残しておく.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;bi-yao-namono&quot;&gt;必要なもの&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You must be running Windows 10 2004 (build &amp;gt;= 10.0.19041.0) or later to run Windows Terminal&lt;&#x2F;li&gt;
+&lt;li&gt;You must enable Developer Mode in the Windows Settings app to locally install and run Windows Terminal&lt;&#x2F;li&gt;
+&lt;li&gt;You must have PowerShell 7 or later installed&lt;&#x2F;li&gt;
+&lt;li&gt;You must have the Windows 11 (10.0.22000.0) SDK installed&lt;&#x2F;li&gt;
+&lt;li&gt;You must have at least VS 2019 installed&lt;&#x2F;li&gt;
+&lt;li&gt;You must install the following Workloads via the VS Installer. Note: Opening the solution in VS 2019 will prompt you to install missing components automatically:
+&lt;ul&gt;
+&lt;li&gt;Desktop Development with C++&lt;&#x2F;li&gt;
+&lt;li&gt;Universal Windows Platform Development&lt;&#x2F;li&gt;
+&lt;li&gt;The following Individual Components
+&lt;ul&gt;
+&lt;li&gt;C++ (v142) Universal Windows Platform Tools&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;You must install the .NET Framework Targeting Pack to build test projects&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;VS 2019と書いてあるが2022でも大丈夫だった.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;birudoshou-shun&quot;&gt;ビルド手順&lt;&#x2F;h2&gt;
+&lt;p&gt;まず, GithubからWindows TerminalのRepositoryをクローンしてくる.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;git clone https:&#x2F;&#x2F;github.com&#x2F;microsoft&#x2F;terminal.git --recursive
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;recursiveをつけ忘れた場合は, 以下のコマンドでサブモジュールをアップデートする.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;git submodule update --init --recursive
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;そして, ビルドする前に当該コードを修正する.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;src\cascadia\TerminalControl\TSFInputControl.cpp&lt;&#x2F;code&gt;の以下の部分を修正する.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;diff&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-diff &quot;&gt;&lt;code class=&quot;language-diff&quot; data-lang=&quot;diff&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;-        _editContext.InputScope(CoreTextInputScope::AlphanumericHalfWidth);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;+        _editContext.InputScope(CoreTextInputScope::Text);
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;そして, &lt;code&gt;OpenConsole.sln&lt;&#x2F;code&gt;を開き, ビルドタイプを&lt;code&gt;Release&#x2F;x64&lt;&#x2F;code&gt;に設定し, ソリューションエクスプローラーから&lt;code&gt;Terminal&#x2F;CascadiaPackage&lt;&#x2F;code&gt;を右クリックして&amp;quot;配置&#x2F;Deploy&amp;quot;をクリックすれば良い.&lt;&#x2F;p&gt;
+&lt;p&gt;ビルドは結構時間がかかる.&lt;&#x2F;p&gt;
+&lt;p&gt;インストールされた実行ファイルは&lt;code&gt;C:\Users\&amp;lt;User&amp;gt;\AppData\Local\Microsoft\WindowsApps\wtd.exe&lt;&#x2F;code&gt;にある.
+普通にインストールしたものは&lt;code&gt;wt.exe&lt;&#x2F;code&gt;で, 自分でビルドしたものは&lt;code&gt;wtd.exe&lt;&#x2F;code&gt;になるようだ.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>

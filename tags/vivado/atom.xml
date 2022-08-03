@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja">
+	<title>Suzuki Shun&#x27;s homepage - vivado</title>
+	<link href="https://sssssssuzuki.github.io/tags/vivado/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://sssssssuzuki.github.io"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2022-07-14T00:00:00+00:00</updated>
+	<id>https://sssssssuzuki.github.io/tags/vivado/atom.xml</id>
+	<entry xml:lang="ja">
+		<title>Vitis 2022.1で自作IPを使うとビルド時にエラーが出る</title>
+		<published>2022-07-14T00:00:00+00:00</published>
+		<updated>2022-07-14T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://sssssssuzuki.github.io/blog/vitis-ip-error/" type="text/html"/>
+		<id>https://sssssssuzuki.github.io/blog/vitis-ip-error/</id>
+		<content type="html">&lt;p&gt;Arty Z7で開発時に, 自作IPを含んだPlatform Projectのビルド時にエラーが発生する現象に遭遇した.&lt;&#x2F;p&gt;
+&lt;p&gt;いまいち原因は分からないが, とりあえず対処療法的に治ったのでメモとして残しておく.&lt;&#x2F;p&gt;
+&lt;p&gt;エラーを見るに
+&lt;code&gt;\&amp;lt;platform project\&amp;gt;&#x2F;ps7_cortexa9_0&#x2F;bsp&#x2F;ps7_cortexa9_0&#x2F;libsrc&#x2F;\&amp;lt;IP name\&amp;gt;&#x2F;src&lt;&#x2F;code&gt;
+及び,
+&lt;code&gt;\&amp;lt;platform project\&amp;gt;&#x2F;zynq_fsbl&#x2F;zynq_fsbl_bsp&#x2F;ps7_cortexa9_0&#x2F;libsrc&#x2F;\&amp;lt;IP name\&amp;gt;&#x2F;src&lt;&#x2F;code&gt;
+の&lt;code&gt;Makefile&lt;&#x2F;code&gt;が間違っているっぽい.&lt;&#x2F;p&gt;
+&lt;p&gt;デフォルトで用意されているIP (例えば, AXI_GPIOとか) はビルドに成功するので, その&lt;code&gt;Makefile&lt;&#x2F;code&gt;で上記の自作IPの&lt;code&gt;Makefile&lt;&#x2F;code&gt;を上書きすればエラーは出なくなった.&lt;&#x2F;p&gt;
+&lt;p&gt;ただし, ハードウェアやBSP settingsを更新するたびに同じ作業が必要になる.
+どうにかならないものか.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="ja">
+		<title>WindowsのVivadoのテキストエディタとしてNeovimを使用する方法</title>
+		<published>2022-07-13T00:00:00+00:00</published>
+		<updated>2022-07-13T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://sssssssuzuki.github.io/blog/vivado-neovim/" type="text/html"/>
+		<id>https://sssssssuzuki.github.io/blog/vivado-neovim/</id>
+		<content type="html">&lt;p&gt;Linux用の設定例は書かれているが, Windows用がなかったのでメモとして残しておく.&lt;&#x2F;p&gt;
+&lt;p&gt;Windowsの場合は, Windows Teminalを使用する.&lt;&#x2F;p&gt;
+&lt;p&gt;「Tools→Settings→Text Editor」にてCustom Editorを選択し, 右側の…をクリックし, 以下のように入力すれば良い.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;wt nvim [file name] +[line number]
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;上記はnvimへのPATHが通っている前提.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>

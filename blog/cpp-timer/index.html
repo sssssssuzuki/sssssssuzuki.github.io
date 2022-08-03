@@ -1,0 +1,982 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- FAVICON -->
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-16x16.png' rel="icon" sizes="16x16" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-32x32.png' rel="icon" sizes="32x32" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;android-chrome-512x512.png' rel="android-chrome" sizes="512x512" />
+  
+  
+  <link href='&#x2F;icons&#x2F;android-chrome-192x192.png' rel="android-chrome" sizes="192x192" />
+  
+  
+  <link href='&#x2F;icons&#x2F;apple-touch-icon.png' rel="apple-touch-icon" sizes="180x180" />
+  
+  
+  <link href='&#x2F;icons&#x2F;apple-touch-icon.png' rel="apple-touch-icon" sizes="180x180" />
+  
+
+  <link href="/css/main.css" rel="stylesheet">
+  <link id="syntax_highlight" href="#" rel="stylesheet">
+
+  
+
+<link rel="stylesheet" href="https://sssssssuzuki.github.io/katex.css">
+<script defer src="https://sssssssuzuki.github.io/katex.js"></script>
+<script defer src="https://sssssssuzuki.github.io/auto-render.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+	    ],
+	    macros : {
+		"\\mint" : "\\int_{\#1}^{\#2}\\mathrm{d}\#3\\thinspace",
+		"\\R": "\\mathbb{R}",
+		"\\SI": "{\#1}\\,\\mathrm{\#2}"
+	    }
+        });
+    });
+</script>
+
+
+
+  <title>
+    
+    Suzuki Shun&#x27;s homepage
+    
+  </title>
+</head>
+
+<body class="dark:bg-gray-700 flex flex-col h-screen justify-between">
+  <!---------------------------------------------------------->
+  <!------------------------- NAVBAR ------------------------->
+  <!---------------------------------------------------------->
+  <nav id="navbar" class="bg-gray-200 dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="relative flex items-center justify-between h-16">
+        <div class="flex items-center sm:hidden">
+          <!-- Mobile menu button-->
+          <button id="toggle-mobile-menu" type="button"
+            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <!--
+              Icon when menu is closed.
+              Heroicon name: outline/menu
+              Menu open: "hidden", Menu closed: "block"
+            -->
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <!--
+              Icon when menu is open.
+              Heroicon name: outline/x
+              Menu open: "block", Menu closed: "hidden"
+            -->
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex-1 flex items-center">
+          <div class="flex-shrink-0 flex items-center ml-2">
+            <a href="/" class="text-xl text-gray-800 dark:text-white">Suzuki Shun&#x27;s homepage</a>
+            <!-- <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
+            <img class="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow"> -->
+          </div>
+          <div class="hidden sm:block sm:ml-6">
+            <div class="nav-links flex space-x-4">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              
+              
+              
+              <a href="&#x2F;"
+                class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+              
+              <a href="&#x2F;about&#x2F;about-me"
+                class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About me</a>
+              
+              <a href="&#x2F;blog"
+                class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</a>
+              
+              <a href="&#x2F;categories"
+                class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Categories</a>
+              
+              <a href="&#x2F;tags"
+                class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Tags</a>
+              
+              
+              
+
+              
+            </div>
+          </div>
+
+          
+
+          <!---------------------------- Sidebar Menu ---------------------------->
+          
+
+          
+          <!-- Theme switch button -->
+          <div class="flex p-2">
+            <button id="switch-theme" type="button"
+              class="bg-gray-200 text-gray-800 hover:text-gray-900 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white p-1 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+              <span class="sr-only">Switch Theme</span>
+              <!-- Heroicon name: outline/light -->
+              <svg id="light" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                </path>
+              </svg>
+              <!-- Heroicon name: outline/dark -->
+              <svg id="dark" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+              </svg>
+            </button>
+
+            <!-- Profile dropdown -->
+            <!-- <div class="ml-3 relative">
+            <div>
+              <button type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                <span class="sr-only">Open user menu</span>
+                <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+              </button>
+            </div> -->
+
+            <!--
+              Dropdown menu, show/hide based on menu state.
+
+              Entering: "transition ease-out duration-100"
+                From: "transform opacity-0 scale-95"
+                To: "transform opacity-100 scale-100"
+              Leaving: "transition ease-in duration-75"
+                From: "transform opacity-100 scale-100"
+                To: "transform opacity-0 scale-95"
+            -->
+            <!-- Active: "bg-gray-100", Not Active: "" -->
+            <!-- <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!----------------------------- Mobile menu ----------------------------->
+    <div id="mobile-menu" class="sm:hidden fixed z-10 overflow-hidden">
+      <div
+        class="nav-links flex flex-col space-y-4 items-center w-screen dark:bg-gray-800 transition-all ease-out duration-500 h-0">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        
+        
+        
+        <a href="&#x2F;"
+          class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+        
+        <a href="&#x2F;about&#x2F;about-me"
+          class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About me</a>
+        
+        <a href="&#x2F;blog"
+          class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</a>
+        
+        <a href="&#x2F;categories"
+          class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Categories</a>
+        
+        <a href="&#x2F;tags"
+          class="text-gray-800 dark:text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Tags</a>
+        
+        
+        
+
+        
+      </div>
+    </div>
+  </nav>
+  <!----------------------------------------------------------->
+  <!------------------------- CONTENT ------------------------->
+  <!----------------------------------------------------------->
+  <main class="max-w-7xl mx-auto text-black dark:text-gray-200 w-full mb-auto">
+    
+<div class="flex">
+   <h1 class="text-2xl text-bold my-6 mx-auto">
+      C++で周期的な処理を行う
+    </h1>
+</div>
+<div class="flex gap-x-8">
+  <div class="flex flex-col sm:w-3/4 w-full border border-2 border-gray-200 dark:border-black rounded-xl p-5 shadow-2xl bg-gray-200 dark:bg-gray-800">
+
+    <div class="flex flex-col py-2 justify-center">
+     <!-- <h2 class="text-2xl text-bold"><a href='https:&#x2F;&#x2F;sssssssuzuki.github.io&#x2F;blog&#x2F;cpp-timer&#x2F;'>C++で周期的な処理を行う</a></h2> -->
+      <p class="text-bold"></p>
+    </div>
+
+    <!-- Read time and word count -->
+    <div class="flex flex-wrap py-2">
+      <div class="flex items-center w-1/3">
+        <div class="flex flex-col sm:flex-row sm:space-x-3 text-gray-900 dark:text-gray-400">
+          <span class="flex">
+            <!-- Icon clock -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span class="ml-1">15 min</span>
+          </span>
+          <span class="flex">
+            <!-- Icon pencil -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+            </svg>
+            <span class="ml-1">2823 words</span>
+          </span>
+        </div>
+      </div>
+      <!-- Author and publish date -->
+      <div class="flex w-2/3 sm:space-x-3 text-gray-900 dark:text-gray-400 justify-end">
+         <span class="flex items-center">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          <span class="ml-1"><time datetime="2022-08-03">Published on August 03, 2022</time></span>
+        </span>
+        <span class="flex items-center">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+          </svg>
+          
+            <span class="ml-1">Suzuki Shun</span>
+            <img class="rounded-full h-9 w-9 ml-1" src="https:&#x2F;&#x2F;via.placeholder.com&#x2F;200" alt="Placeholder text describing the default author&#x27;s avatar.">
+          
+        </span>
+      </div>
+    </div>
+
+    <!-- Categories and Tags -->
+    <div class="flex flex-wrap py-2">
+      <div class="w-2/3">
+        
+          <p>
+            Categories:
+            
+            <a class="text-gray-900 dark:text-gray-400 flex py-1 items-center" href="https://sssssssuzuki.github.io/categories/blog/">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+              </svg>
+              <span class="pl-1">blog</span>
+            </a>
+            
+          </p>
+        
+      </div>
+      <div class="w-1/3">
+        
+        <p>
+          Tags:
+          
+          <a class="text-gray-900 dark:text-gray-400 flex py-1 items-center" href="https://sssssssuzuki.github.io/tags/c/">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+            </svg>
+            <span class="pl-1">C++</span>
+          </a>
+          
+          <a class="text-gray-900 dark:text-gray-400 flex py-1 items-center" href="https://sssssssuzuki.github.io/tags/timer/">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+            </svg>
+            <span class="pl-1">Timer</span>
+          </a>
+          
+        </p>
+        
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div id="page-content" class="text-bold mt-2">
+      <p>C++で周期的な処理を行う必要があったので, 様々な手法について調べてみた.</p>
+<p>周期処理について調べると, ほとんどのサイトでOS固有のタイマーを使用した処理が出てくるが, 移植性が低い.
+また, Windowsのタイマーはms単位でしか指定できない.</p>
+<p>ので, 別の方法を模索しつつ, 各タイマーの精度を調べてみた.</p>
+<h1 id="tl-dr">TL;DR</h1>
+<p>基本的に, 普通に<a href="https://sssssssuzuki.github.io/blog/cpp-timer/#ruputostd-this-thread-sleep-untilnozu-mihe-wase">ループとstd::this_thread::sleep_untilの組み合わせ</a>を使用すればいい.
+移植性もあり, Windowsでも $\SI{16.666}{ms}$ 周期 ($\SI{60}{fps}$) 程度なら問題なく, $\SI{500}{us}$ 周期でもなんとかなる.
+さらに, Linux/macの場合は, $\SI{100}{us}$周期 ($\SI{10000}{fps}$) とかも行ける.</p>
+<p>Windowsでそれ以上の精度を求める場合は, PerformanceCounterとSoftware Sleepを組み合わせるしかない.</p>
+<h1 id="zhou-qi-de-nichu-li-woxing-utamenoyang-nafang-fa">周期的に処理を行うための様々な方法</h1>
+<p>以下に各OS毎に周期処理を行う方法を紹介する.</p>
+<p>なお, 共通化を図るために以下のようなインターフェースを用意した.</p>
+<pre data-lang="cpp" style="background-color:#2b303b;color:#c0c5ce;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span style="color:#b48ead;">template </span><span>&lt;</span><span style="color:#b48ead;">typename</span><span> T&gt;
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">Timer </span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;"> </span><span style="color:#b48ead;">public</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">virtual void </span><span style="color:#8fa1b3;">start</span><span style="color:#eff1f5;">(T</span><span>* </span><span style="color:#bf616a;">callback</span><span style="color:#eff1f5;">, uint32_t </span><span style="color:#bf616a;">interval_ns</span><span style="color:#eff1f5;">) </span><span>= </span><span style="color:#d08770;">0</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">virtual void </span><span style="color:#8fa1b3;">stop</span><span style="color:#eff1f5;">() </span><span>= </span><span style="color:#d08770;">0</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">virtual </span><span style="color:#8fa1b3;">~Timer</span><span style="color:#eff1f5;">() {}
+</span><span style="color:#eff1f5;">}</span><span>;
+</span></code></pre>
+<p>型<code>T</code>はメンバ関数として<code>callback</code>という名前の引数なしの関数を持てば何でも良い.
+また, 周期は<code>interval_ns</code>でns単位で指定するとする.</p>
+<p><code>start</code>で周期処理が開始され, 指定した周期で, <code>T</code>型のクラスのメンバ関数<code>callback</code>が呼ばれる.
+<code>stop</code>で周期処理を止める.</p>
+<p>以下, 一部ヘッダやプラグマは省略する.
+また, エラー処理も面倒なので省いている.</p>
+<p>完全なソースコードは<a href="https://github.com/sssssssuzuki/periodic-timer-sample">GitHub</a>においてある.</p>
+<h2 id="ruputostd-this-thread-sleep-untilnozu-mihe-wase">ループとstd::this_thread::sleep_untilの組み合わせ</h2>
+<p>以下のように所定の時間まで<code>std::this_thread::sleep_until</code>で待てばいい.</p>
+<p>この方法は各OS共通で使用できる.</p>
+<pre data-lang="cpp" style="background-color:#2b303b;color:#c0c5ce;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span style="color:#b48ead;">template </span><span>&lt;</span><span style="color:#b48ead;">typename</span><span> T&gt;
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">StdSleepTimer </span><span style="color:#eff1f5;">: </span><span style="color:#b48ead;">public </span><span style="color:#a3be8c;">Timer</span><span style="color:#eff1f5;">&lt;T&gt; {
+</span><span style="color:#eff1f5;"> </span><span style="color:#b48ead;">public</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">  </span><span style="color:#8fa1b3;">StdSleepTimer</span><span style="color:#eff1f5;">() : </span><span style="color:#bf616a;">_thread_running</span><span style="color:#eff1f5;">(</span><span style="color:#d08770;">false</span><span style="color:#eff1f5;">) {}
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">start</span><span style="color:#eff1f5;">(T</span><span>* </span><span style="color:#bf616a;">callback</span><span style="color:#eff1f5;">, uint32_t </span><span style="color:#bf616a;">interval_ns</span><span style="color:#eff1f5;">) </span><span style="color:#b48ead;">override </span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">    _thread_running </span><span>= </span><span style="color:#d08770;">true</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">const auto</span><span style="color:#eff1f5;"> interval </span><span>= </span><span style="color:#eff1f5;">std::chrono::</span><span style="color:#bf616a;">microseconds</span><span style="color:#eff1f5;">(interval_ns </span><span>/ </span><span style="color:#d08770;">1000</span><span style="color:#eff1f5;">);
+</span><span style="color:#eff1f5;">    _timer_callback </span><span>= </span><span style="color:#eff1f5;">std::</span><span style="color:#bf616a;">thread</span><span style="color:#eff1f5;">([</span><span style="color:#bf616a;">this</span><span style="color:#eff1f5;">, interval, callback]() {
+</span><span style="color:#eff1f5;">      </span><span style="color:#b48ead;">auto</span><span style="color:#eff1f5;"> next </span><span>= </span><span style="color:#eff1f5;">std::chrono::high_resolution_clock::</span><span style="color:#bf616a;">now</span><span style="color:#eff1f5;">();
+</span><span style="color:#eff1f5;">      </span><span style="color:#b48ead;">while </span><span style="color:#eff1f5;">(_thread_running) {
+</span><span style="color:#eff1f5;">        next </span><span>+=</span><span style="color:#eff1f5;"> interval;
+</span><span style="color:#eff1f5;">        std::this_thread::</span><span style="color:#bf616a;">sleep_until</span><span style="color:#eff1f5;">(next);
+</span><span style="color:#eff1f5;">        callback-&gt;</span><span style="color:#bf616a;">callback</span><span style="color:#eff1f5;">();
+</span><span style="color:#eff1f5;">      }
+</span><span style="color:#eff1f5;">    });
+</span><span style="color:#eff1f5;">  }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">stop</span><span style="color:#eff1f5;">() </span><span style="color:#b48ead;">override </span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">if </span><span style="color:#eff1f5;">(</span><span>!</span><span style="color:#eff1f5;">_thread_running) </span><span style="color:#b48ead;">return</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    _thread_running </span><span>= </span><span style="color:#d08770;">false</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">if </span><span style="color:#eff1f5;">(_timer_callback.</span><span style="color:#bf616a;">joinable</span><span style="color:#eff1f5;">()) _timer_callback.</span><span style="color:#bf616a;">join</span><span style="color:#eff1f5;">();
+</span><span style="color:#eff1f5;">  }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#8fa1b3;">~StdSleepTimer</span><span style="color:#eff1f5;">() { </span><span style="color:#bf616a;">stop</span><span style="color:#eff1f5;">(); }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;"> </span><span style="color:#b48ead;">private</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">  std::thread _timer_callback;
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">bool</span><span style="color:#eff1f5;"> _thread_running;
+</span><span style="color:#eff1f5;">}</span><span>;
+</span></code></pre>
+<h2 id="windows-multimedia-timerwoshi-u">(Windows) MultiMedia Timerを使う</h2>
+<p><a href="https://docs.microsoft.com/ja-jp/previous-versions/dd757634(v=vs.85)">timeSetEvent</a>を使用する.</p>
+<p>ドキュメントによるとTimerQueue Timerの使用が推奨されているが, TimerQueue Timerには問題がある (後述) ので使うならこちらを使った方がいい.</p>
+<p>周期はms単位でしか指定できない. フラグの意味は上記ドキュメント参照.</p>
+<p><code>timeSetEvent</code>の第3引数で指定したコールバック関数を第1引数で指定した間隔で実行してくれる.
+ちょっと面倒だが, 第4引数でコールバッククラスのポインタを渡して, コールバック関数内で元の型に戻して, 所望の関数を呼び出している. </p>
+<pre data-lang="cpp" style="background-color:#2b303b;color:#c0c5ce;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span style="color:#b48ead;">template </span><span>&lt;</span><span style="color:#b48ead;">typename</span><span> T&gt;
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">MultiMediaTimer </span><span style="color:#eff1f5;">: </span><span style="color:#b48ead;">public </span><span style="color:#a3be8c;">Timer</span><span style="color:#eff1f5;">&lt;T&gt; {
+</span><span style="color:#eff1f5;"> </span><span style="color:#b48ead;">public</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">  </span><span style="color:#8fa1b3;">MultiMediaTimer</span><span style="color:#eff1f5;">() : </span><span style="color:#bf616a;">_timer_id</span><span style="color:#eff1f5;">(</span><span style="color:#d08770;">0</span><span style="color:#eff1f5;">) {}
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">start</span><span style="color:#eff1f5;">(T</span><span>* </span><span style="color:#bf616a;">callback</span><span style="color:#eff1f5;">, uint32_t </span><span style="color:#bf616a;">interval_ns</span><span style="color:#eff1f5;">) </span><span style="color:#b48ead;">override </span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">const auto</span><span style="color:#eff1f5;"> interval </span><span>=</span><span style="color:#eff1f5;"> interval_ns </span><span>/ </span><span style="color:#d08770;">1000 </span><span>/ </span><span style="color:#d08770;">1000</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    _timer_id </span><span>= </span><span style="color:#bf616a;">timeSetEvent</span><span style="color:#eff1f5;">(std::</span><span style="color:#bf616a;">max</span><span style="color:#eff1f5;">(</span><span style="color:#d08770;">1</span><span style="color:#b48ead;">u</span><span style="color:#eff1f5;">, interval), </span><span style="color:#d08770;">1</span><span style="color:#eff1f5;">, timer_callback, </span><span>reinterpret_cast</span><span style="color:#eff1f5;">&lt;DWORD_PTR&gt;(callback),
+</span><span style="color:#eff1f5;">                             TIME_PERIODIC </span><span>|</span><span style="color:#eff1f5;"> TIME_CALLBACK_FUNCTION </span><span>|</span><span style="color:#eff1f5;"> TIME_KILL_SYNCHRONOUS);
+</span><span style="color:#eff1f5;">  }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">stop</span><span style="color:#eff1f5;">() </span><span style="color:#b48ead;">override </span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">if </span><span style="color:#eff1f5;">(_timer_id </span><span>== </span><span style="color:#d08770;">0</span><span style="color:#eff1f5;">) </span><span style="color:#b48ead;">return</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    </span><span style="color:#bf616a;">timeKillEvent</span><span style="color:#eff1f5;">(_timer_id);
+</span><span style="color:#eff1f5;">    _timer_id </span><span>= </span><span style="color:#d08770;">0</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">  }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#8fa1b3;">~MultiMediaTimer</span><span style="color:#eff1f5;">() { </span><span style="color:#bf616a;">stop</span><span style="color:#eff1f5;">(); }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;"> </span><span style="color:#b48ead;">private</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">static void </span><span style="color:#eff1f5;">CALLBACK </span><span style="color:#8fa1b3;">timer_callback</span><span style="color:#eff1f5;">(</span><span style="color:#bf616a;">UINT</span><span style="color:#eff1f5;">, </span><span style="color:#bf616a;">UINT</span><span style="color:#eff1f5;">, DWORD_PTR </span><span style="color:#bf616a;">dw_user</span><span style="color:#eff1f5;">, </span><span style="color:#bf616a;">DWORD_PTR</span><span style="color:#eff1f5;">, </span><span style="color:#bf616a;">DWORD_PTR</span><span style="color:#eff1f5;">) { </span><span>reinterpret_cast</span><span style="color:#eff1f5;">&lt;T</span><span>*</span><span style="color:#eff1f5;">&gt;(dw_user)-&gt;</span><span style="color:#bf616a;">callback</span><span style="color:#eff1f5;">(); }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  uint32_t _timer_id;
+</span><span style="color:#eff1f5;">}</span><span>;
+</span></code></pre>
+<h2 id="windows-timerqueue-timerwoshi-u">(Windows) TimerQueue Timerを使う</h2>
+<p>こちらも$\SI{1}{ms}$単位で指定できるんだけど, 実際にはどうやっても$\SI{16}{ms}$以下の周期にならない.</p>
+<p>MultiMedia Timerを使えばいいと思う.</p>
+<pre data-lang="cpp" style="background-color:#2b303b;color:#c0c5ce;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span style="color:#b48ead;">template </span><span>&lt;</span><span style="color:#b48ead;">typename</span><span> T&gt;
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">TimerQueueTimer </span><span style="color:#eff1f5;">: </span><span style="color:#b48ead;">public </span><span style="color:#a3be8c;">Timer</span><span style="color:#eff1f5;">&lt;T&gt; {
+</span><span style="color:#eff1f5;"> </span><span style="color:#b48ead;">public</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">  </span><span style="color:#8fa1b3;">TimerQueueTimer</span><span style="color:#eff1f5;">() : </span><span style="color:#bf616a;">_timer_queue</span><span style="color:#eff1f5;">(</span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">), </span><span style="color:#bf616a;">_timer</span><span style="color:#eff1f5;">(</span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">) {}
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">start</span><span style="color:#eff1f5;">(T</span><span>* </span><span style="color:#bf616a;">callback</span><span style="color:#eff1f5;">, uint32_t </span><span style="color:#bf616a;">interval_ns</span><span style="color:#eff1f5;">) </span><span style="color:#b48ead;">override </span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">const auto</span><span style="color:#eff1f5;"> interval </span><span>=</span><span style="color:#eff1f5;"> interval_ns </span><span>/ </span><span style="color:#d08770;">1000 </span><span>/ </span><span style="color:#d08770;">1000</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    _timer_queue </span><span>= </span><span style="color:#bf616a;">CreateTimerQueue</span><span style="color:#eff1f5;">();
+</span><span style="color:#eff1f5;">    </span><span style="color:#bf616a;">CreateTimerQueueTimer</span><span style="color:#eff1f5;">(</span><span>&amp;</span><span style="color:#eff1f5;">_timer, _timer_queue, (WAITORTIMERCALLBACK)timer_callback, (</span><span style="color:#b48ead;">void</span><span>*</span><span style="color:#eff1f5;">)callback, </span><span style="color:#d08770;">0</span><span style="color:#eff1f5;">, std::</span><span style="color:#bf616a;">max</span><span style="color:#eff1f5;">(</span><span style="color:#d08770;">1</span><span style="color:#b48ead;">u</span><span style="color:#eff1f5;">, interval), </span><span style="color:#d08770;">0</span><span style="color:#eff1f5;">);
+</span><span style="color:#eff1f5;">  }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">stop</span><span style="color:#eff1f5;">() </span><span style="color:#b48ead;">override </span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">if </span><span style="color:#eff1f5;">(_timer </span><span>== </span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">) </span><span style="color:#b48ead;">return</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">if </span><span style="color:#eff1f5;">(_timer_queue </span><span>== </span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">) </span><span style="color:#b48ead;">return</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    </span><span style="color:#bf616a;">DeleteTimerQueueTimer</span><span style="color:#eff1f5;">(_timer_queue, _timer, </span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">);
+</span><span style="color:#eff1f5;">    </span><span style="color:#bf616a;">DeleteTimerQueue</span><span style="color:#eff1f5;">(_timer_queue);
+</span><span style="color:#eff1f5;">    _timer </span><span>= </span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    _timer_queue </span><span>= </span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">  }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#8fa1b3;">~TimerQueueTimer</span><span style="color:#eff1f5;">() { </span><span style="color:#bf616a;">stop</span><span style="color:#eff1f5;">(); }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;"> </span><span style="color:#b48ead;">private</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">static void </span><span style="color:#eff1f5;">CALLBACK </span><span style="color:#8fa1b3;">timer_callback</span><span style="color:#eff1f5;">(PVOID </span><span style="color:#bf616a;">lpParam</span><span style="color:#eff1f5;">, BOOLEAN </span><span style="color:#bf616a;">TimerOrWaitFired</span><span style="color:#eff1f5;">) { </span><span>reinterpret_cast</span><span style="color:#eff1f5;">&lt;T</span><span>*</span><span style="color:#eff1f5;">&gt;(lpParam)-&gt;</span><span style="color:#bf616a;">callback</span><span style="color:#eff1f5;">(); }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  HANDLE _timer_queue;
+</span><span style="color:#eff1f5;">  HANDLE _timer;
+</span><span style="color:#eff1f5;">}</span><span>;
+</span></code></pre>
+<h2 id="windows-threadpool-timerwoshi-u">(Windows) ThreadPool Timerを使う</h2>
+<p>これも, TimerQueue Timerと同様で使う場面はないだろう.</p>
+<pre data-lang="cpp" style="background-color:#2b303b;color:#c0c5ce;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span style="color:#b48ead;">template </span><span>&lt;</span><span style="color:#b48ead;">typename</span><span> T&gt;
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">ThreadPoolTimer </span><span style="color:#eff1f5;">: </span><span style="color:#b48ead;">public </span><span style="color:#a3be8c;">Timer</span><span style="color:#eff1f5;">&lt;T&gt; {
+</span><span style="color:#eff1f5;"> </span><span style="color:#b48ead;">public</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">  </span><span style="color:#8fa1b3;">ThreadPoolTimer</span><span style="color:#eff1f5;">() : </span><span style="color:#bf616a;">_timer</span><span style="color:#eff1f5;">(</span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">) {}
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">start</span><span style="color:#eff1f5;">(T</span><span>* </span><span style="color:#bf616a;">callback</span><span style="color:#eff1f5;">, uint32_t </span><span style="color:#bf616a;">interval_ns</span><span style="color:#eff1f5;">) </span><span style="color:#b48ead;">override </span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">    _timer </span><span>= </span><span style="color:#bf616a;">CreateThreadpoolTimer</span><span style="color:#eff1f5;">(timer_callback, (PVOID)callback, </span><span style="color:#d08770;">NULL</span><span style="color:#eff1f5;">);
+</span><span style="color:#eff1f5;">    ULARGE_INTEGER </span><span style="color:#bf616a;">start</span><span style="color:#eff1f5;">{};
+</span><span style="color:#eff1f5;">    start.</span><span style="color:#bf616a;">QuadPart </span><span>= </span><span style="color:#eff1f5;">(ULONGLONG)(</span><span>-</span><span style="color:#eff1f5;">interval_ns </span><span>/ </span><span style="color:#d08770;">100</span><span style="color:#eff1f5;">);
+</span><span style="color:#eff1f5;">    FILETIME </span><span style="color:#bf616a;">ft</span><span style="color:#eff1f5;">{};
+</span><span style="color:#eff1f5;">    ft.</span><span style="color:#bf616a;">dwHighDateTime </span><span>=</span><span style="color:#eff1f5;"> start.</span><span style="color:#bf616a;">HighPart</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    ft.</span><span style="color:#bf616a;">dwLowDateTime </span><span>=</span><span style="color:#eff1f5;"> start.</span><span style="color:#bf616a;">LowPart</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">const auto</span><span style="color:#eff1f5;"> interval </span><span>=</span><span style="color:#eff1f5;"> interval_ns </span><span>/ </span><span style="color:#d08770;">1000 </span><span>/ </span><span style="color:#d08770;">1000</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    </span><span style="color:#bf616a;">SetThreadpoolTimer</span><span style="color:#eff1f5;">(_timer, </span><span>&amp;</span><span style="color:#eff1f5;">ft, std::</span><span style="color:#bf616a;">max</span><span style="color:#eff1f5;">(</span><span style="color:#d08770;">1</span><span style="color:#b48ead;">u</span><span style="color:#eff1f5;">, interval), </span><span style="color:#d08770;">0</span><span style="color:#eff1f5;">);
+</span><span style="color:#eff1f5;">  }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">stop</span><span style="color:#eff1f5;">() </span><span style="color:#b48ead;">override </span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">if </span><span style="color:#eff1f5;">(_timer </span><span>== </span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">) </span><span style="color:#b48ead;">return</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    </span><span style="color:#bf616a;">CloseThreadpoolTimer</span><span style="color:#eff1f5;">(_timer);
+</span><span style="color:#eff1f5;">    _timer </span><span>= </span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">  }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#8fa1b3;">~ThreadPoolTimer</span><span style="color:#eff1f5;">() { </span><span style="color:#bf616a;">stop</span><span style="color:#eff1f5;">(); }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;"> </span><span style="color:#b48ead;">private</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">static void</span><span style="color:#eff1f5;"> NTAPI </span><span style="color:#8fa1b3;">timer_callback</span><span style="color:#eff1f5;">(</span><span style="color:#bf616a;">PTP_CALLBACK_INSTANCE</span><span style="color:#eff1f5;">, PVOID </span><span style="color:#bf616a;">Context</span><span style="color:#eff1f5;">, </span><span style="color:#bf616a;">PTP_TIMER</span><span style="color:#eff1f5;">) { </span><span>reinterpret_cast</span><span style="color:#eff1f5;">&lt;T</span><span>*</span><span style="color:#eff1f5;">&gt;(Context)-&gt;</span><span style="color:#bf616a;">callback</span><span style="color:#eff1f5;">(); }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  PTP_TIMER _timer;
+</span><span style="color:#eff1f5;">}</span><span>;
+</span></code></pre>
+<h2 id="windows-waitable-timerwoshi-u">(Windows) Waitable Timerを使う</h2>
+<p>Waitable Timerは上記3つと異なり単位指定が$\SI{100}{ns}$単位になっている.
+ただし, 実際には$\SI{500}{us}$が限界のようだ (後述).</p>
+<p>Waitable Timerを使う場合には, <code>FILETIME</code>構造体の時刻表現に従う時刻まで<code>WaitForSingleObject</code>で待つことになる.</p>
+<p>ただし, <code>SetWaitableTimer</code>の引数には<code>FILETIME</code>構造体ではなく<code>LARGE_INTEGER</code>を渡す必要がありややこしい.</p>
+<p>また, 今回は使用していないが, マイナスの引数を渡すと相対時刻を表すことになる.</p>
+<pre data-lang="cpp" style="background-color:#2b303b;color:#c0c5ce;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span style="color:#b48ead;">template </span><span>&lt;</span><span style="color:#b48ead;">typename</span><span> T&gt;
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">WaitableTimer </span><span style="color:#eff1f5;">: </span><span style="color:#b48ead;">public </span><span style="color:#a3be8c;">Timer</span><span style="color:#eff1f5;">&lt;T&gt; {
+</span><span style="color:#eff1f5;"> </span><span style="color:#b48ead;">public</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">  </span><span style="color:#8fa1b3;">WaitableTimer</span><span style="color:#eff1f5;">() : </span><span style="color:#bf616a;">_thread_running</span><span style="color:#eff1f5;">(</span><span style="color:#d08770;">false</span><span style="color:#eff1f5;">), </span><span style="color:#bf616a;">_timer</span><span style="color:#eff1f5;">(</span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">) {}
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">start</span><span style="color:#eff1f5;">(T</span><span>* </span><span style="color:#bf616a;">callback</span><span style="color:#eff1f5;">, uint32_t </span><span style="color:#bf616a;">interval_ns</span><span style="color:#eff1f5;">) </span><span style="color:#b48ead;">override </span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">    _timer </span><span>= </span><span style="color:#bf616a;">CreateWaitableTimer</span><span style="color:#eff1f5;">(</span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">, </span><span style="color:#d08770;">TRUE</span><span style="color:#eff1f5;">, </span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">);
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">const </span><span style="color:#eff1f5;">LONGLONG interval </span><span>= static_cast</span><span style="color:#eff1f5;">&lt;LONGLONG&gt;(interval_ns) </span><span>/ </span><span style="color:#d08770;">100</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    _thread_running </span><span>= </span><span style="color:#d08770;">true</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    _timer_callback </span><span>= </span><span style="color:#eff1f5;">std::</span><span style="color:#bf616a;">thread</span><span style="color:#eff1f5;">([</span><span style="color:#bf616a;">this</span><span style="color:#eff1f5;">, interval, callback]() {
+</span><span style="color:#eff1f5;">      FILETIME system_time;
+</span><span style="color:#eff1f5;">      </span><span style="color:#bf616a;">GetSystemTimePreciseAsFileTime</span><span style="color:#eff1f5;">(</span><span>&amp;</span><span style="color:#eff1f5;">system_time);
+</span><span style="color:#eff1f5;">      LARGE_INTEGER next_time </span><span>= *reinterpret_cast</span><span style="color:#eff1f5;">&lt;LARGE_INTEGER</span><span>*</span><span style="color:#eff1f5;">&gt;(</span><span>&amp;</span><span style="color:#eff1f5;">system_time);
+</span><span style="color:#eff1f5;">      </span><span style="color:#b48ead;">while </span><span style="color:#eff1f5;">(_thread_running) {
+</span><span style="color:#eff1f5;">        next_time.</span><span style="color:#bf616a;">QuadPart </span><span>+=</span><span style="color:#eff1f5;"> interval;
+</span><span style="color:#eff1f5;">        </span><span style="color:#bf616a;">SetWaitableTimer</span><span style="color:#eff1f5;">(_timer, </span><span>&amp;</span><span style="color:#eff1f5;">next_time, </span><span style="color:#d08770;">0</span><span style="color:#eff1f5;">, </span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">, </span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">, </span><span style="color:#d08770;">FALSE</span><span style="color:#eff1f5;">);
+</span><span style="color:#eff1f5;">        </span><span style="color:#b48ead;">if </span><span style="color:#eff1f5;">(</span><span style="color:#bf616a;">WaitForSingleObject</span><span style="color:#eff1f5;">(_timer, INFINITE) </span><span>!=</span><span style="color:#eff1f5;"> WAIT_OBJECT_0) </span><span style="color:#b48ead;">break</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">        callback-&gt;</span><span style="color:#bf616a;">callback</span><span style="color:#eff1f5;">();
+</span><span style="color:#eff1f5;">      }
+</span><span style="color:#eff1f5;">    });
+</span><span style="color:#eff1f5;">  }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">stop</span><span style="color:#eff1f5;">() </span><span style="color:#b48ead;">override </span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">if </span><span style="color:#eff1f5;">(</span><span>!</span><span style="color:#eff1f5;">_thread_running) </span><span style="color:#b48ead;">return</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    _thread_running </span><span>= </span><span style="color:#d08770;">false</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">if </span><span style="color:#eff1f5;">(_timer_callback.</span><span style="color:#bf616a;">joinable</span><span style="color:#eff1f5;">()) _timer_callback.</span><span style="color:#bf616a;">join</span><span style="color:#eff1f5;">();
+</span><span style="color:#eff1f5;">    </span><span style="color:#bf616a;">CloseHandle</span><span style="color:#eff1f5;">(_timer);
+</span><span style="color:#eff1f5;">    _timer </span><span>= </span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">  }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#8fa1b3;">~WaitableTimer</span><span style="color:#eff1f5;">() { </span><span style="color:#bf616a;">stop</span><span style="color:#eff1f5;">(); }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;"> </span><span style="color:#b48ead;">private</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">  std::thread _timer_callback;
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">bool</span><span style="color:#eff1f5;"> _thread_running;
+</span><span style="color:#eff1f5;">  HANDLE _timer;
+</span><span style="color:#eff1f5;">}
+</span></code></pre>
+<h2 id="windows-performancecountertosoftware-sleepwoshi-u">(Windows) PerformanceCounterとsoftware sleepを使う</h2>
+<p>Windowsでどうしても$\SI{500}{us}$以上の精度が欲しい場合は, Software Sleepを使うしかない.</p>
+<p>ただし, 当然のことながら負荷は大きい.
+その代わり, $\SI{1}{us}$程度の精度まで出すことができる. (そこまで求めるならWindowsを使用すべきではないが.)</p>
+<p>以下では, <code>QueryPerformanceCounter</code>で時刻測定をしているが, <code>std::high_resolution_clock</code>でもいいかもしれない.</p>
+<pre data-lang="cpp" style="background-color:#2b303b;color:#c0c5ce;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span style="color:#b48ead;">template </span><span>&lt;</span><span style="color:#b48ead;">typename</span><span> T&gt;
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">PerformanceCounterSoftSleepTimer </span><span style="color:#eff1f5;">: </span><span style="color:#b48ead;">public </span><span style="color:#a3be8c;">Timer</span><span style="color:#eff1f5;">&lt;T&gt; {
+</span><span style="color:#eff1f5;"> </span><span style="color:#b48ead;">public</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">  </span><span style="color:#8fa1b3;">PerformanceCounterSoftSleepTimer</span><span style="color:#eff1f5;">() : </span><span style="color:#bf616a;">_thread_running</span><span style="color:#eff1f5;">(</span><span style="color:#d08770;">false</span><span style="color:#eff1f5;">) {}
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">start</span><span style="color:#eff1f5;">(T</span><span>* </span><span style="color:#bf616a;">callback</span><span style="color:#eff1f5;">, uint32_t </span><span style="color:#bf616a;">interval_ns</span><span style="color:#eff1f5;">) </span><span style="color:#b48ead;">override </span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">    LARGE_INTEGER f;
+</span><span style="color:#eff1f5;">    </span><span style="color:#bf616a;">QueryPerformanceFrequency</span><span style="color:#eff1f5;">(</span><span>&amp;</span><span style="color:#eff1f5;">f);
+</span><span style="color:#eff1f5;">    LONGLONG interval </span><span>= </span><span style="color:#eff1f5;">(f.</span><span style="color:#bf616a;">QuadPart </span><span>/ </span><span style="color:#d08770;">1000</span><span style="color:#b48ead;">LL </span><span>/ </span><span style="color:#d08770;">1000</span><span style="color:#b48ead;">LL </span><span>*</span><span style="color:#eff1f5;"> interval_ns) </span><span>/ </span><span style="color:#d08770;">1000</span><span style="color:#b48ead;">LL</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    _thread_running </span><span>= </span><span style="color:#d08770;">true</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    _timer_callback </span><span>= </span><span style="color:#eff1f5;">std::</span><span style="color:#bf616a;">thread</span><span style="color:#eff1f5;">([</span><span style="color:#bf616a;">this</span><span style="color:#eff1f5;">, interval, callback]() {
+</span><span style="color:#eff1f5;">      LARGE_INTEGER next_time, now;
+</span><span style="color:#eff1f5;">      </span><span style="color:#bf616a;">QueryPerformanceCounter</span><span style="color:#eff1f5;">(</span><span>&amp;</span><span style="color:#eff1f5;">next_time);
+</span><span style="color:#eff1f5;">      </span><span style="color:#b48ead;">while </span><span style="color:#eff1f5;">(_thread_running) {
+</span><span style="color:#eff1f5;">        next_time.</span><span style="color:#bf616a;">QuadPart </span><span>+=</span><span style="color:#eff1f5;"> interval;
+</span><span style="color:#eff1f5;">        </span><span style="color:#b48ead;">while </span><span style="color:#eff1f5;">(</span><span style="color:#d08770;">true</span><span style="color:#eff1f5;">) {
+</span><span style="color:#eff1f5;">          </span><span style="color:#bf616a;">QueryPerformanceCounter</span><span style="color:#eff1f5;">(</span><span>&amp;</span><span style="color:#eff1f5;">now);
+</span><span style="color:#eff1f5;">          </span><span style="color:#b48ead;">if </span><span style="color:#eff1f5;">(now.</span><span style="color:#bf616a;">QuadPart </span><span>&gt;=</span><span style="color:#eff1f5;"> next_time.</span><span style="color:#bf616a;">QuadPart</span><span style="color:#eff1f5;">) </span><span style="color:#b48ead;">break</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">        }
+</span><span style="color:#eff1f5;">        callback-&gt;</span><span style="color:#bf616a;">callback</span><span style="color:#eff1f5;">();
+</span><span style="color:#eff1f5;">      }
+</span><span style="color:#eff1f5;">    });
+</span><span style="color:#eff1f5;">  }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">stop</span><span style="color:#eff1f5;">() </span><span style="color:#b48ead;">override </span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">if </span><span style="color:#eff1f5;">(</span><span>!</span><span style="color:#eff1f5;">_thread_running) </span><span style="color:#b48ead;">return</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    _thread_running </span><span>= </span><span style="color:#d08770;">false</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">if </span><span style="color:#eff1f5;">(_timer_callback.</span><span style="color:#bf616a;">joinable</span><span style="color:#eff1f5;">()) _timer_callback.</span><span style="color:#bf616a;">join</span><span style="color:#eff1f5;">();
+</span><span style="color:#eff1f5;">  }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#8fa1b3;">~PerformanceCounterSoftSleepTimer</span><span style="color:#eff1f5;">() { </span><span style="color:#bf616a;">stop</span><span style="color:#eff1f5;">(); }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;"> </span><span style="color:#b48ead;">private</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">  std::thread _timer_callback;
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">bool</span><span style="color:#eff1f5;"> _thread_running;
+</span><span style="color:#eff1f5;">}</span><span>;
+</span></code></pre>
+<h2 id="linux-posix-timerwoshi-u">(Linux) POSIX Timerを使う</h2>
+<p>LinuxというかPOSIX準拠のOSならPOSIX Timerが使える.</p>
+<p>こちらは, 周期は$\SI{1}{ns}$単位で指定できる.</p>
+<pre data-lang="cpp" style="background-color:#2b303b;color:#c0c5ce;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span style="color:#b48ead;">template </span><span>&lt;</span><span style="color:#b48ead;">typename</span><span> T&gt;
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">POSIXTimer </span><span style="color:#eff1f5;">: </span><span style="color:#b48ead;">public </span><span style="color:#a3be8c;">Timer</span><span style="color:#eff1f5;">&lt;T&gt; {
+</span><span style="color:#eff1f5;"> </span><span style="color:#b48ead;">public</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">  </span><span style="color:#8fa1b3;">POSIXTimer</span><span style="color:#eff1f5;">() : </span><span style="color:#bf616a;">_timer</span><span style="color:#eff1f5;">(</span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">) {}
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">start</span><span style="color:#eff1f5;">(T</span><span>* </span><span style="color:#bf616a;">callback</span><span style="color:#eff1f5;">, uint32_t </span><span style="color:#bf616a;">interval_ns</span><span style="color:#eff1f5;">) </span><span style="color:#b48ead;">override </span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">struct</span><span style="color:#eff1f5;"> itimerspec itval;
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">struct</span><span style="color:#eff1f5;"> sigevent se;
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">    itval.</span><span style="color:#bf616a;">it_value</span><span style="color:#eff1f5;">.</span><span style="color:#bf616a;">tv_sec </span><span>= </span><span style="color:#d08770;">0</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    itval.</span><span style="color:#bf616a;">it_value</span><span style="color:#eff1f5;">.</span><span style="color:#bf616a;">tv_nsec </span><span>=</span><span style="color:#eff1f5;"> interval_ns;
+</span><span style="color:#eff1f5;">    itval.</span><span style="color:#bf616a;">it_interval</span><span style="color:#eff1f5;">.</span><span style="color:#bf616a;">tv_sec </span><span>= </span><span style="color:#d08770;">0</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    itval.</span><span style="color:#bf616a;">it_interval</span><span style="color:#eff1f5;">.</span><span style="color:#bf616a;">tv_nsec </span><span>=</span><span style="color:#eff1f5;"> interval_ns;
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">    </span><span style="color:#96b5b4;">memset</span><span style="color:#eff1f5;">(</span><span>&amp;</span><span style="color:#eff1f5;">se, </span><span style="color:#d08770;">0</span><span style="color:#eff1f5;">, </span><span>sizeof</span><span style="color:#eff1f5;">(se));
+</span><span style="color:#eff1f5;">    se.</span><span style="color:#bf616a;">sigev_value</span><span style="color:#eff1f5;">.</span><span style="color:#bf616a;">sival_ptr </span><span>=</span><span style="color:#eff1f5;"> callback;
+</span><span style="color:#eff1f5;">    se.</span><span style="color:#bf616a;">sigev_notify </span><span>=</span><span style="color:#eff1f5;"> SIGEV_THREAD;
+</span><span style="color:#eff1f5;">    se.</span><span style="color:#bf616a;">sigev_notify_function </span><span>=</span><span style="color:#eff1f5;"> _callback;
+</span><span style="color:#eff1f5;">    se.</span><span style="color:#bf616a;">sigev_notify_attributes </span><span>= </span><span style="color:#d08770;">NULL</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">    </span><span style="color:#bf616a;">timer_create</span><span style="color:#eff1f5;">(CLOCK_REALTIME, </span><span>&amp;</span><span style="color:#eff1f5;">se, </span><span>&amp;</span><span style="color:#eff1f5;">_timer);
+</span><span style="color:#eff1f5;">    </span><span style="color:#bf616a;">timer_settime</span><span style="color:#eff1f5;">(_timer, </span><span style="color:#d08770;">0</span><span style="color:#eff1f5;">, </span><span>&amp;</span><span style="color:#eff1f5;">itval, </span><span style="color:#d08770;">NULL</span><span style="color:#eff1f5;">);
+</span><span style="color:#eff1f5;">  }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">stop</span><span style="color:#eff1f5;">() </span><span style="color:#b48ead;">override </span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">if </span><span style="color:#eff1f5;">(_timer </span><span>== </span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">) </span><span style="color:#b48ead;">return</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    </span><span style="color:#bf616a;">timer_delete</span><span style="color:#eff1f5;">(_timer);
+</span><span style="color:#eff1f5;">    _timer </span><span>= </span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">  }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#8fa1b3;">~POSIXTimer</span><span style="color:#eff1f5;">() { </span><span style="color:#bf616a;">stop</span><span style="color:#eff1f5;">(); }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;"> </span><span style="color:#b48ead;">private</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">static void </span><span style="color:#8fa1b3;">_callback</span><span style="color:#eff1f5;">(</span><span style="color:#b48ead;">union</span><span style="color:#eff1f5;"> sigval </span><span style="color:#bf616a;">sv</span><span style="color:#eff1f5;">) { </span><span>reinterpret_cast</span><span style="color:#eff1f5;">&lt;T</span><span>*</span><span style="color:#eff1f5;">&gt;(sv.</span><span style="color:#bf616a;">sival_ptr</span><span style="color:#eff1f5;">)-&gt;</span><span style="color:#bf616a;">callback</span><span style="color:#eff1f5;">(); }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  timer_t _timer;
+</span><span style="color:#eff1f5;">}</span><span>;
+</span></code></pre>
+<h2 id="mac-gcd-timerwoshi-u">(mac) GCD Timerを使う</h2>
+<p>macの場合はGrand Central Dispatch (GCD) のTimerが使える.</p>
+<p>これも, 周期は$\SI{1}{ns}$単位で指定できる.</p>
+<pre data-lang="cpp" style="background-color:#2b303b;color:#c0c5ce;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span style="color:#b48ead;">template </span><span>&lt;</span><span style="color:#b48ead;">typename</span><span> T&gt;
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">GCDTimer </span><span style="color:#eff1f5;">: </span><span style="color:#b48ead;">public </span><span style="color:#a3be8c;">Timer</span><span style="color:#eff1f5;">&lt;T&gt; {
+</span><span style="color:#eff1f5;"> </span><span style="color:#b48ead;">public</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">  </span><span style="color:#8fa1b3;">GCDTimer</span><span style="color:#eff1f5;">() : </span><span style="color:#bf616a;">_queue</span><span style="color:#eff1f5;">(</span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">), </span><span style="color:#bf616a;">_timer</span><span style="color:#eff1f5;">(</span><span style="color:#d08770;">nullptr</span><span style="color:#eff1f5;">), </span><span style="color:#bf616a;">_stopped</span><span style="color:#eff1f5;">(</span><span style="color:#d08770;">false</span><span style="color:#eff1f5;">) {}
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">start</span><span style="color:#eff1f5;">(T</span><span>* </span><span style="color:#bf616a;">callback</span><span style="color:#eff1f5;">, uint32_t </span><span style="color:#bf616a;">interval_ns</span><span style="color:#eff1f5;">) </span><span style="color:#b48ead;">override </span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">    _queue </span><span>= </span><span style="color:#bf616a;">dispatch_queue_create</span><span style="color:#eff1f5;">(</span><span>&quot;</span><span style="color:#a3be8c;">timerQueue</span><span>&quot;</span><span style="color:#eff1f5;">, </span><span style="color:#d08770;">0</span><span style="color:#eff1f5;">);
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">    _timer </span><span>= </span><span style="color:#bf616a;">dispatch_source_create</span><span style="color:#eff1f5;">(DISPATCH_SOURCE_TYPE_TIMER, </span><span style="color:#d08770;">0</span><span style="color:#eff1f5;">, </span><span style="color:#d08770;">0</span><span style="color:#eff1f5;">, _queue);
+</span><span style="color:#eff1f5;">    </span><span style="color:#bf616a;">dispatch_source_set_event_handler</span><span style="color:#eff1f5;">(_timer, </span><span>^</span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">      </span><span style="color:#bf616a;">_callback</span><span style="color:#eff1f5;">(callback);
+</span><span style="color:#eff1f5;">    });
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">    </span><span style="color:#bf616a;">dispatch_source_set_cancel_handler</span><span style="color:#eff1f5;">(_timer, </span><span>^</span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">      </span><span style="color:#bf616a;">dispatch_release</span><span style="color:#eff1f5;">(_timer);
+</span><span style="color:#eff1f5;">      </span><span style="color:#bf616a;">dispatch_release</span><span style="color:#eff1f5;">(_queue);
+</span><span style="color:#eff1f5;">    });
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">    dispatch_time_t start </span><span>= </span><span style="color:#bf616a;">dispatch_time</span><span style="color:#eff1f5;">(DISPATCH_TIME_NOW, </span><span style="color:#d08770;">0</span><span style="color:#eff1f5;">);
+</span><span style="color:#eff1f5;">    </span><span style="color:#bf616a;">dispatch_source_set_timer</span><span style="color:#eff1f5;">(_timer, start, interval_ns, </span><span style="color:#d08770;">0</span><span style="color:#eff1f5;">);
+</span><span style="color:#eff1f5;">    </span><span style="color:#bf616a;">dispatch_resume</span><span style="color:#eff1f5;">(_timer);
+</span><span style="color:#eff1f5;">    _stopped </span><span>= </span><span style="color:#d08770;">false</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">  }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">stop</span><span style="color:#eff1f5;">() </span><span style="color:#b48ead;">override </span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">if </span><span style="color:#eff1f5;">(_stopped) </span><span style="color:#b48ead;">return</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    </span><span style="color:#bf616a;">dispatch_source_cancel</span><span style="color:#eff1f5;">(_timer);
+</span><span style="color:#eff1f5;">    _stopped </span><span>= </span><span style="color:#d08770;">true</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">  }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  </span><span style="color:#8fa1b3;">~GCDTimer</span><span style="color:#eff1f5;">() { </span><span style="color:#bf616a;">stop</span><span style="color:#eff1f5;">(); }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;"> </span><span style="color:#b48ead;">private</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">_callback</span><span style="color:#eff1f5;">(T</span><span>* </span><span style="color:#bf616a;">ptr</span><span style="color:#eff1f5;">) { ptr-&gt;</span><span style="color:#bf616a;">callback</span><span style="color:#eff1f5;">(); }
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">  dispatch_queue_t _queue;
+</span><span style="color:#eff1f5;">  dispatch_source_t _timer;
+</span><span style="color:#eff1f5;">  </span><span style="color:#b48ead;">bool</span><span style="color:#eff1f5;"> _stopped;
+</span><span style="color:#eff1f5;">}</span><span>;
+</span></code></pre>
+<h1 id="jing-du-bi-jiao">精度比較</h1>
+<p>以下に, 上記方法で色々な周期を指定した場合の精度を比較する.</p>
+<p>精度比較は以下のようなコールバック構造体を用意して, 1000回<code>callback</code>が呼ばれるまで待ち, <code>callback</code>の呼び出し時刻を計測した.</p>
+<pre data-lang="cpp" style="background-color:#2b303b;color:#c0c5ce;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span style="color:#b48ead;">struct </span><span>Callback {
+</span><span>  std::vector&lt;int64_t&gt; stats;
+</span><span>  std::chrono::time_point&lt;std::chrono::high_resolution_clock&gt; begin;
+</span><span>
+</span><span>  </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">init</span><span>() {
+</span><span>    stats.</span><span style="color:#bf616a;">clear</span><span>();
+</span><span>    stats.</span><span style="color:#bf616a;">reserve</span><span>(ITERATION);
+</span><span>    begin = std::chrono::high_resolution_clock::</span><span style="color:#bf616a;">now</span><span>();
+</span><span>  }
+</span><span>
+</span><span>  </span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">callback</span><span>() {
+</span><span>    </span><span style="color:#b48ead;">const auto</span><span> now = std::chrono::high_resolution_clock::</span><span style="color:#bf616a;">now</span><span>();
+</span><span>    </span><span style="color:#b48ead;">const auto</span><span> dur = std::chrono::</span><span style="color:#bf616a;">duration_cast</span><span>&lt;std::chrono::nanoseconds&gt;(now - begin);
+</span><span>    stats.</span><span style="color:#bf616a;">emplace_back</span><span>(dur.</span><span style="color:#bf616a;">count</span><span>());
+</span><span>  }
+</span><span>};
+</span></code></pre>
+<p>なお, Windowsでは<code>timeBeginPeriod(1)</code>を呼び出している.</p>
+<p>完全な計測用のコードは<a href="https://github.com/sssssssuzuki/periodic-timer-sample/blob/master/bench/main.cpp">GitHub</a>を参照されたい.</p>
+<h2 id="zhou-qi-16-666667ms-60-fps">周期16.666667ms (60 FPS)</h2>
+<p>周期に$\SI{16.666667}{ms}$を指定した場合の呼び出し時刻のグラフが以下になる.</p>
+<p>グラフの対角線上に乗っていれば理想的である.</p>
+<ul>
+<li>
+<p>Windows</p>
+<p><img src="https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/win_with_timebeginperiod/16.666667ms.svg" alt="win60fps" /></p>
+<ul>
+<li>MultiMedia Timer, TimerQueue Timer, ThreadPool Timerは単位指定が$\SI{1}{ms}$なので周期が$\SI{16}{ms}$でちょっと短くなっている.</li>
+</ul>
+</li>
+<li>
+<p>Linux</p>
+<p><img src="https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/linux/16.666667ms.svg" alt="linux60fps" /></p>
+</li>
+<li>
+<p>macOS</p>
+<p><img src="https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/mac/16.666667ms.svg" alt="mac60fps" /></p>
+</li>
+</ul>
+<h2 id="zhou-qi-1ms-1000-fps">周期1ms (1000 FPS)</h2>
+<p>周期に$\SI{1}{ms}$を指定した場合の呼び出し時刻のグラフが以下になる.</p>
+<ul>
+<li>
+<p>Windows</p>
+<p><img src="https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/win_with_timebeginperiod/1.0ms.svg" alt="win60fps" /></p>
+<ul>
+<li>ThreadPool Timerは$\SI{16}{ms}$未満を指定しても意味がないらしい. なお, TimerQueue TimerもThreadPool Timerに隠れて見えていないが同様である.</li>
+</ul>
+</li>
+<li>
+<p>Linux</p>
+<p><img src="https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/linux/1.0ms.svg" alt="linux60fps" /></p>
+</li>
+<li>
+<p>macOS</p>
+<p><img src="https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/mac/1.0ms.svg" alt="mac60fps" /></p>
+</li>
+</ul>
+<h2 id="zhou-qi-500us-2000-fps">周期500us (2000 FPS)</h2>
+<p>周期に$\SI{500}{us}$を指定した場合の呼び出し時刻のグラフが以下になる.</p>
+<ul>
+<li>
+<p>Windows</p>
+<p><img src="https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/win_with_timebeginperiod/500.0us.svg" alt="win60fps" /></p>
+<ul>
+<li>Waitable Timerはこのあたりまで対応できる.</li>
+</ul>
+</li>
+<li>
+<p>Linux</p>
+<p><img src="https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/linux/500.0us.svg" alt="linux60fps" /></p>
+</li>
+<li>
+<p>macOS</p>
+<p><img src="https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/mac/500.0us.svg" alt="mac60fps" /></p>
+</li>
+</ul>
+<h2 id="zhou-qi-100us-10000-fps">周期100us (10000 FPS)</h2>
+<p>周期に$\SI{100}{us}$を指定した場合の呼び出し時刻のグラフが以下になる.</p>
+<ul>
+<li>
+<p>Windows</p>
+<p><img src="https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/win_with_timebeginperiod/100.0us.svg" alt="win60fps" /></p>
+<ul>
+<li>ThreadPool TimerとTimerQueue Timerは論外で, MultiMedia Timerも$\SI{1}{ms}$単位なので使えない. <code>std::this_thread::sleep_for</code>とWaitable Timerを使った場合は, かなりガタつくが意外と頑張ってる. PerformanceCounterとSoftware Sleepはまだまだ大丈夫そう.</li>
+</ul>
+</li>
+<li>
+<p>Linux</p>
+<p><img src="https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/linux/100.0us.svg" alt="linux60fps" /></p>
+</li>
+<li>
+<p>macOS</p>
+<p><img src="https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/mac/100.0us.svg" alt="mac60fps" /></p>
+</li>
+</ul>
+<p>LinuxとmacOSはこの程度なら全く問題ない.</p>
+<h2 id="zhou-qi-1us-1000000-fps">周期1us (1000000 FPS)</h2>
+<p>周期に$\SI{1}{us}$を指定した場合の呼び出し時刻のグラフが以下になる.</p>
+<p>ここまで行くとさすがにどれも厳しそう, まあここまで使うことはないと思うけど.</p>
+<ul>
+<li>
+<p>Windows</p>
+<p><img src="https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/win_with_timebeginperiod/1.0us.svg" alt="win60fps" /></p>
+<ul>
+<li>PerformanceCounterとSoftware Sleepの組み合わせはかなり頑張ってるが, 途中ちょっとおかしくなる.</li>
+</ul>
+</li>
+<li>
+<p>Linux</p>
+<p><img src="https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/linux/1.0us.svg" alt="linux60fps" /></p>
+</li>
+<li>
+<p>macOS</p>
+<p><img src="https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/mac/1.0us.svg" alt="mac60fps" /></p>
+</li>
+</ul>
+<h1 id="matome">まとめ</h1>
+<p>基本的に, <a href="https://sssssssuzuki.github.io/blog/cpp-timer/#ruputostd-this-thread-sleep-untilnozu-mihe-wase">ループとstd::this_thread::sleep_untilの組み合わせ</a>を使用すればいい.</p>
+<p>ただし, Windowsかつ$\SI{0.5}{ms}$以上の高精度がほしいなら, 負荷を承知でSoftware Sleepを使う.</p>
+<p>また, 実際にはコールバック関数で指定する処理の重さとか, PCにかかっている負荷とか, ハードウェアとかによっても変わってくるので各自の環境で実際に調べることをおすすめする.</p>
+<h1 id="omake-timebeginperiodwohu-banaichang-he">おまけ (timeBeginPeriodを呼ばない場合)</h1>
+<p>以下に, <code>timeBeginPeriod</code>を呼ばなかった場合のデータを載せておく.</p>
+<ul>
+<li>
+<p>$\SI{16.666667}{ms}$</p>
+<p><img src="https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/win_without_timebeginperiod/16.666667ms.svg" alt="win60fps" /></p>
+</li>
+<li>
+<p>$\SI{1}{ms}$</p>
+<p><img src="https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/win_without_timebeginperiod/1.0ms.svg" alt="win60fps" /></p>
+</li>
+<li>
+<p>$\SI{500}{us}$</p>
+<p><img src="https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/win_without_timebeginperiod/500.0us.svg" alt="win60fps" /></p>
+</li>
+</ul>
+<p>$\SI{1}{ms}$あたりから, <code>std::this_thread::sleep_until</code>とWaitable Timerを使用する場合の呼び出し間隔がガタつき始める.</p>
+<p>興味深いことに, MultiMedia Timerとかには影響がない.</p>
+
+    </div>
+
+
+
+  </div>
+
+
+    <!-- Table of content -->
+    
+    <div class="hidden sm:block sm:w-1/4 sm:flex sm:items-center sm:flex-col sm:mt-10 sm:w-1/5">
+      <div class="border border-2 border-gray-200 dark:border-black rounded-xl p-5 shadow-2xl bg-gray-200 dark:bg-gray-800 sticky top-12">
+        <p class="text-bold text-xl">Table of contents</p>
+        <ul id="toc">
+          
+          <li class="pl-2 my-2">
+            <a id="link-tl-dr" class="text-md block rounded-lg p-2" href="https://sssssssuzuki.github.io/blog/cpp-timer/#tl-dr">
+              - TL;DR
+            </a>
+            
+          </li>
+          
+          <li class="pl-2 my-2">
+            <a id="link-zhou-qi-de-nichu-li-woxing-utamenoyang-nafang-fa" class="text-md block rounded-lg p-2" href="https://sssssssuzuki.github.io/blog/cpp-timer/#zhou-qi-de-nichu-li-woxing-utamenoyang-nafang-fa">
+              - 周期的に処理を行うための様々な方法
+            </a>
+            
+              
+                <li class="pl-4 my-2">
+                  <a id="link-ruputostd-this-thread-sleep-untilnozu-mihe-wase" class="text-sm block rounded-lg p-2" href="https://sssssssuzuki.github.io/blog/cpp-timer/#ruputostd-this-thread-sleep-untilnozu-mihe-wase">
+                    - ループとstd::this_thread::sleep_untilの組み合わせ
+                  </a>
+                </li>
+              
+                <li class="pl-4 my-2">
+                  <a id="link-windows-multimedia-timerwoshi-u" class="text-sm block rounded-lg p-2" href="https://sssssssuzuki.github.io/blog/cpp-timer/#windows-multimedia-timerwoshi-u">
+                    - (Windows) MultiMedia Timerを使う
+                  </a>
+                </li>
+              
+                <li class="pl-4 my-2">
+                  <a id="link-windows-timerqueue-timerwoshi-u" class="text-sm block rounded-lg p-2" href="https://sssssssuzuki.github.io/blog/cpp-timer/#windows-timerqueue-timerwoshi-u">
+                    - (Windows) TimerQueue Timerを使う
+                  </a>
+                </li>
+              
+                <li class="pl-4 my-2">
+                  <a id="link-windows-threadpool-timerwoshi-u" class="text-sm block rounded-lg p-2" href="https://sssssssuzuki.github.io/blog/cpp-timer/#windows-threadpool-timerwoshi-u">
+                    - (Windows) ThreadPool Timerを使う
+                  </a>
+                </li>
+              
+                <li class="pl-4 my-2">
+                  <a id="link-windows-waitable-timerwoshi-u" class="text-sm block rounded-lg p-2" href="https://sssssssuzuki.github.io/blog/cpp-timer/#windows-waitable-timerwoshi-u">
+                    - (Windows) Waitable Timerを使う
+                  </a>
+                </li>
+              
+                <li class="pl-4 my-2">
+                  <a id="link-windows-performancecountertosoftware-sleepwoshi-u" class="text-sm block rounded-lg p-2" href="https://sssssssuzuki.github.io/blog/cpp-timer/#windows-performancecountertosoftware-sleepwoshi-u">
+                    - (Windows) PerformanceCounterとsoftware sleepを使う
+                  </a>
+                </li>
+              
+                <li class="pl-4 my-2">
+                  <a id="link-linux-posix-timerwoshi-u" class="text-sm block rounded-lg p-2" href="https://sssssssuzuki.github.io/blog/cpp-timer/#linux-posix-timerwoshi-u">
+                    - (Linux) POSIX Timerを使う
+                  </a>
+                </li>
+              
+                <li class="pl-4 my-2">
+                  <a id="link-mac-gcd-timerwoshi-u" class="text-sm block rounded-lg p-2" href="https://sssssssuzuki.github.io/blog/cpp-timer/#mac-gcd-timerwoshi-u">
+                    - (mac) GCD Timerを使う
+                  </a>
+                </li>
+              
+            
+          </li>
+          
+          <li class="pl-2 my-2">
+            <a id="link-jing-du-bi-jiao" class="text-md block rounded-lg p-2" href="https://sssssssuzuki.github.io/blog/cpp-timer/#jing-du-bi-jiao">
+              - 精度比較
+            </a>
+            
+              
+                <li class="pl-4 my-2">
+                  <a id="link-zhou-qi-16-666667ms-60-fps" class="text-sm block rounded-lg p-2" href="https://sssssssuzuki.github.io/blog/cpp-timer/#zhou-qi-16-666667ms-60-fps">
+                    - 周期16.666667ms (60 FPS)
+                  </a>
+                </li>
+              
+                <li class="pl-4 my-2">
+                  <a id="link-zhou-qi-1ms-1000-fps" class="text-sm block rounded-lg p-2" href="https://sssssssuzuki.github.io/blog/cpp-timer/#zhou-qi-1ms-1000-fps">
+                    - 周期1ms (1000 FPS)
+                  </a>
+                </li>
+              
+                <li class="pl-4 my-2">
+                  <a id="link-zhou-qi-500us-2000-fps" class="text-sm block rounded-lg p-2" href="https://sssssssuzuki.github.io/blog/cpp-timer/#zhou-qi-500us-2000-fps">
+                    - 周期500us (2000 FPS)
+                  </a>
+                </li>
+              
+                <li class="pl-4 my-2">
+                  <a id="link-zhou-qi-100us-10000-fps" class="text-sm block rounded-lg p-2" href="https://sssssssuzuki.github.io/blog/cpp-timer/#zhou-qi-100us-10000-fps">
+                    - 周期100us (10000 FPS)
+                  </a>
+                </li>
+              
+                <li class="pl-4 my-2">
+                  <a id="link-zhou-qi-1us-1000000-fps" class="text-sm block rounded-lg p-2" href="https://sssssssuzuki.github.io/blog/cpp-timer/#zhou-qi-1us-1000000-fps">
+                    - 周期1us (1000000 FPS)
+                  </a>
+                </li>
+              
+            
+          </li>
+          
+          <li class="pl-2 my-2">
+            <a id="link-matome" class="text-md block rounded-lg p-2" href="https://sssssssuzuki.github.io/blog/cpp-timer/#matome">
+              - まとめ
+            </a>
+            
+          </li>
+          
+          <li class="pl-2 my-2">
+            <a id="link-omake-timebeginperiodwohu-banaichang-he" class="text-md block rounded-lg p-2" href="https://sssssssuzuki.github.io/blog/cpp-timer/#omake-timebeginperiodwohu-banaichang-he">
+              - おまけ (timeBeginPeriodを呼ばない場合)
+            </a>
+            
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    
+
+
+</div>
+
+  </main>
+
+  <!----------------------------------------------------------->
+  <!------------------------- PAGINATION ---------------------->
+  <!----------------------------------------------------------->
+  
+
+
+
+  <!---------------------------------------------------------->
+  <!------------------------- FOOTER ------------------------->
+  <!---------------------------------------------------------->
+  <footer class="max-w-7xl mx-auto relative pt-1 px-2 border-b-2 border-gray-300 dark:border-gray-200 w-full">
+    <!-- <div class="container mx-auto px-6">
+      <div class="sm:flex sm:mt-8">
+        <div class="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">
+          <div class="flex flex-col">
+            <span class="font-bold text-gray-700 uppercase mb-2">Footer header 1</span>
+            <span class="my-2"><a href="#" class="text-blue-700  text-md hover:text-blue-500">link 1</a></span>
+            <span class="my-2"><a href="#" class="text-blue-700  text-md hover:text-blue-500">link 1</a></span>
+            <span class="my-2"><a href="#" class="text-blue-700  text-md hover:text-blue-500">link 1</a></span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">Footer header 2</span>
+            <span class="my-2"><a href="#" class="text-blue-700 text-md hover:text-blue-500">link 1</a></span>
+            <span class="my-2"><a href="#" class="text-blue-700  text-md hover:text-blue-500">link 1</a></span>
+            <span class="my-2"><a href="#" class="text-blue-700 text-md hover:text-blue-500">link 1</a></span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">Footer header 3</span>
+            <span class="my-2"><a href="#" class="text-blue-700  text-md hover:text-blue-500">link 1</a></span>
+            <span class="my-2"><a href="#" class="text-blue-700  text-md hover:text-blue-500">link 1</a></span>
+            <span class="my-2"><a href="#" class="text-blue-700  text-md hover:text-blue-500">link 1</a></span>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="mt-16 border-t-2 border-gray-300 flex flex-col items-center">
+      <div class="sm:w-2/3 text-center py-6">
+        <p class="text-sm text-black dark:text-white font-bold mb-2">
+          © 2022 blow theme made with <a href="https://tailwindcss.com/" target="_blank">tailwindcss</a> for <a
+            href="https://www.getzola.org/" target="_blank">Zola</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!------------------------- SCRIPTS ------------------------->
+  <script defer src="/js/main.js"></script>
+  
+  
+  
+  
+  <script defer src="/js/page.js"></script>
+
+</body>
+
+</html>

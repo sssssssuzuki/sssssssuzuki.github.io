@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja">
+	<title>Suzuki Shun&#x27;s homepage - Bluetooth</title>
+	<link href="https://sssssssuzuki.github.io/tags/bluetooth/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://sssssssuzuki.github.io"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2022-07-31T00:00:00+00:00</updated>
+	<id>https://sssssssuzuki.github.io/tags/bluetooth/atom.xml</id>
+	<entry xml:lang="ja">
+		<title>技適マークのない無線機器を使う</title>
+		<published>2022-07-31T00:00:00+00:00</published>
+		<updated>2022-07-31T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://sssssssuzuki.github.io/blog/giteki/" type="text/html"/>
+		<id>https://sssssssuzuki.github.io/blog/giteki/</id>
+		<content type="html">&lt;p&gt;日本国内で技適マークのないWi-FiやBluetooth等の無線機器を使用した場合, 電波法違反となる.&lt;&#x2F;p&gt;
+&lt;p&gt;しかし, 実験目的の場合, 総務省に届け出を出せば短期間 (最大180日) だけ使用できる.&lt;&#x2F;p&gt;
+&lt;p&gt;この手続は&lt;a href=&quot;https:&#x2F;&#x2F;exp-sp.denpa.soumu.go.jp&#x2F;public&#x2F;&quot;&gt;総務省のサイト&lt;&#x2F;a&gt;よりオンラインできる.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>

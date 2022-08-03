@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sssssssuzuki.github.io/sitemap.xml
