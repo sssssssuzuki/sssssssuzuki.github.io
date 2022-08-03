@@ -421,6 +421,10 @@ struct Callback {
 };
 ```
 
+なお, Windowsでは`timeBeginPeriod(1)`を呼び出している.
+
+完全な計測用のコードは[GitHub](https://github.com/sssssssuzuki/periodic-timer-sample/blob/master/bench/main.cpp)を参照されたい.
+
 ## 周期16.666667ms (60 FPS)
 
 周期に$\SI{16.666667}{ms}$を指定した場合の呼び出し時刻のグラフが以下になる.
@@ -525,3 +529,23 @@ LinuxとmacOSはこの程度なら全く問題ない.
 ただし, Windowsかつ$\SI{0.5}{ms}$以上の高精度がほしいなら, 負荷を承知でSoftware Sleepを使う.
 
 また, 実際にはコールバック関数で指定する処理の重さとか, PCにかかっている負荷とか, ハードウェアとかによっても変わってくるので各自の環境で実際に調べることをおすすめする.
+
+# おまけ (timeBeginPeriodを呼ばない場合)
+
+以下に, `timeBeginPeriod`を呼ばなかった場合のデータを載せておく.
+
+- $\SI{16.666667}{ms}$
+
+    ![win60fps](https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/win_without_timebeginperiod/16.666667ms.svg)
+
+- $\SI{1}{ms}$
+
+    ![win60fps](https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/win_without_timebeginperiod/1.0ms.svg)
+
+- $\SI{500}{us}$
+
+    ![win60fps](https://raw.githubusercontent.com/sssssssuzuki/sssssssuzuki.github.io/master/content/fig/blog/timer/win_without_timebeginperiod/500.0us.svg)
+
+$\SI{1}{ms}$あたりから, `std::this_thread::sleep_until`とWaitable Timerを使用する場合の呼び出し間隔がガタつき始める.
+
+興味深いことに, MultiMedia Timerとかには影響がない.
